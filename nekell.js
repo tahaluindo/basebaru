@@ -987,7 +987,7 @@ break
                             }, {
                                 "urlButton": {
                                     "displayText": '📍「 INSTAGRAM 」',
-                                    "phoneNumber": 'https://instagram.com/bernekellboy_'
+                                    "phoneNumber": 'https://instagram.com/'
                                 }
                             }, {
                                 "quickReplyButton": {
@@ -1027,7 +1027,7 @@ break
                             }, {
                                 "urlButton": {
                                     "displayText": '📍「 INSTAGRAM 」',
-                                    "phoneNumber": 'https://instagram.com/bernekellboy_'
+                                    "phoneNumber": 'https://instagram.com/'
                                 }
                             }, {
                                 "quickReplyButton": {
@@ -2354,32 +2354,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ├ *NOTE : INI BELUM TERMASUK MENJADI MEMBER PREMIUM!*
 ╰❒ 「 📍 BANG KENAPA KOK MAHAL? YA KARNA KALO BOT ITU GAMPANG KE BANNED OLEH WHATSAPP! 📍 」
 
-「  O p e n  R u n  B o t  !  」
-╭─❒ 「 Run Bot Untuk Nyantai 」🚬
-├ LIST HARGA IN HERE! 👇
-├
-├ 1 MINGGU : 10K
-├ 1 BULAN : 20K
-├ PERMANENT : BISA DI BICARAKAN DENGAN OWNER!
-├
-├ *NOTE : UNTUK SCRIPT BISA DARI ELU ATAU PAKE SC GW ATAU BEBAS!*
-╰❒ 「 📌 JIKA DELAY ATAUPUN TIDAK MERESPON MUNGKIN KENDALA JARINGAN!📌 」
-
-「 O p e n  P e m b u a t a n  L o g o ! 」
-╭─❒ 「 Logo 」🎨
-├ LOGO UNTUK TEAM ESPORT
-├ LOGO UNTUK PRIBADI
-├ LOGO UNTUK YOUTUBE
-├ LOGO UNTUK FB
-├ LOGO UNTUK JB
-├ LOGO UNTUK WA
-├ LOGO UNTUK IG
-├ LOGO UNTUK SERTIFIKAT GAME
-├ LOGO UNTUK WM EDIT
-├
-├ *NOTE : UNTUK HARGA TERGANTUNG LOGO. UNTUK WAKTU PEMBUATAN NYA 10-30 MENIT TERGANTUNG LOGO. DAN MOHON UNTUK TIDAK MENGSPAM KETIKA PEMBUATAN
-BELUM MELEBIHI BATAS WAKTU!!.*
-╰❒ 「 💠JIKA DI ATAS TIDAK ADA YANG KALIAN CARI SILAHKAN HUBUNGI OWNER UNTUK MENANYAKAN! DAN MOHON UNTUK TIDAK SPAM OWNER KARNA AKAN BERAKIBAT KALIAN TERBLOK PERMANENT💠 」
 • *Link Grup Official Bernekellbot* : https://chat.whatsapp.com/J4ii7zkiySP9s6xdlZDggp
 
 ┌──⭓ *Group Menu*
@@ -2699,7 +2673,7 @@ BELUM MELEBIHI BATAS WAKTU!!.*
                             }, {
                                 "urlButton": {
                                     "displayText": 'I N S T A G R A M',
-                                    "url": 'https://instagram.com/bernekellboy_'
+                                    "url": 'https://instagram.com/'
                                 }
                             }, {
                                 "quickReplyButton": {
