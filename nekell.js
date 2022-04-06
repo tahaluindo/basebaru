@@ -431,7 +431,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                anu = `┌──⭓ *「 *Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss 」*
+                anu = `┌──⭓「 *Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -456,7 +456,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Owner',
+                                    "displayText": 'O W N E R',
                                     "id": 'owner'
                                 }  
                             }, {
@@ -931,7 +931,6 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 └────
 
 *${prefix}hapusvote* - untuk menghapus vote
-
 
 ©${nekell.user.id}
 `
