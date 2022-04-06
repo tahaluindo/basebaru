@@ -472,7 +472,44 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-                m.reply('Script : https://github.com/koleksibot\n\n Dont Forget Give Star\n\n Dont Forget Donate')
+                anu = `┌──⭓ SCRIPT BOT
+`
+                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: anu,
+                            hydratedButtons: [{
+                                "urlButton": {
+                                    "displayText": 'D I S I N I',
+                                    "url": 'https://www.rootsec.xyz/2022/03/script-bot-whatsapp-terbaru-versi-md-no.html/'
+                                }
+                            }, {
+                                "urlButton": {
+                                    "displayText": 'I N S T A G R A M',
+                                    "url": 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'P I N G',
+                                    "id": 'ping'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'O W N E R',
+                                    "id": 'owner'
+                                }  
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'M E N U',
+                                    "id": 'menu'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
             case 'chat': {
@@ -1015,32 +1052,32 @@ break
                     await sleep(1500)
                     let btn = [{
                                 "urlButton": {
-                                    "displayText": '📌「 BLOG 」',
+                                    "displayText": '📌「 B L O G G E R 」',
                                     "url": 'https://koleksibot.blogspot.com/'
                                 }
                             }, {
                                 "urlButton": {
-                                    "displayText": '📍「 INSTAGRAM 」',
+                                    "displayText": '📍「 I N S T A G R A M 」',
                                     "phoneNumber": 'https://instagram.com/'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Status Bot',
+                                    "displayText": 'P I N G',
                                     "id": 'ping'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Owner',
+                                    "displayText": 'O W N E R',
                                     "id": 'owner'
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Script',
-                                    "id": 'sc'
+                                    "displayText": 'M E N U',
+                                    "id": 'menu'
                                 }
                             }]
                       nekellgans = fs.readFileSync('./lib/nekell.jpg')
-                      let txt = `「 Broadcast Bot 」\n\n${text}`
+                      let txt = `「 B O T O N L I N E 」\n\n${text}`
                       nekell.send5ButImg(i, txt, nekell.user.name, nekellgans, btn)
                     }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
@@ -1055,32 +1092,32 @@ break
 		    await sleep(1500)
 		    let btn = [{
                                 "urlButton": {
-                                    "displayText": '📌「 BLOG 」',
+                                    "displayText": '📌「 B L O G G E R 」',
                                     "url": 'https://koleksibot.blogspot.com/'
                                 }
                             }, {
                                 "urlButton": {
-                                    "displayText": '📍「 INSTAGRAM 」',
+                                    "displayText": '📍「 I N S T A G R A M 」',
                                     "phoneNumber": 'https://instagram.com/'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Status Bot',
+                                    "displayText": 'P I N G B O T',
                                     "id": 'ping'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Owner',
+                                    "displayText": 'P E M I L I K',
                                     "id": 'owner'
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Script',
-                                    "id": 'sc'
+                                    "displayText": 'M E N U',
+                                    "id": 'menu'
                                 }
                             }]
                       nekellgans = fs.readFileSync('./lib/nekell.jpg')
-                      let txt = `「 Broadcast Bot 」\n\n${text}`
+                      let txt = `「 O N L I N E B O T 」\n\n${text}`
                       nekell.send5ButImg(yoi, txt, nekell.user.name, nekellgans, btn)
 		}
 		m.reply('Sukses Broadcast')
@@ -1113,7 +1150,7 @@ break
                  let teks = `⬣ *LIST PERSONAL CHAT*\n\nTotal Chat : ${anu.length} Chat\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
-                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n─────────────\n\n`
                  }
                  nekell.sendTextWithMentions(m.chat, teks, m)
              }
@@ -1147,7 +1184,7 @@ break
                 let encmedia = await nekell.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else {
-                throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
+                throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-10 Detik`
                 }
             }
             break 
@@ -1464,11 +1501,11 @@ break
 	    break
             case 'coffe': case 'kopi': {
             let buttons = [
-                    {buttonId: `coffe`, buttonText: {displayText: 'Next Image'}, type: 1}
+                    {buttonId: `coffe`, buttonText: {displayText: 'L A N J U T K A N'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
-                    caption: `☕ Random Coffe`,
+                    caption: `J A N G A N S P A M K A K`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -2379,7 +2416,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 anu = `┌──⭓ *「 Koleksibot Base V2 」*
  Hai Kak ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
-│📍 Si Beban : ${pushname}
+│📍 Username : ${pushname}
 │📍 Creator : ${ownername}
 │📍 Prefix  : ${prefix}
 │📍 Owner   : ${ownernumber}
@@ -2712,7 +2749,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Owner',
+                                    "displayText": 'O W N E R',
                                     "id": 'owner'
                                 }  
                             }, {
