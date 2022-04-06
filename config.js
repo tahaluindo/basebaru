@@ -8,11 +8,27 @@ const chalk = require('chalk')
 // Website Api Tak Perlu Di Ganti Nanti Error
 global.APIs = {
 	zenz: 'https://zenzapi.xyz',
+  bg: 'http://bochil.ddns.net',
+  amel: 'https://melcanz.com',
+  xteam: 'https://api.xteam.xyz',
+  indonesiaapi: 'https://indonesiapi.herokuapp.com',
+  zeks: 'https://myselfff.herokuapp.com',
+  pencarikode: 'https://pencarikode.xyz',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
+  neoxr: 'https://neoxr-api.herokuapp.com',
+  lolhum: 'https://api.lolhuman.xyz'
 }
 
 // Apikey Website Api Tak Perlu Di Ganti Nanti Error
 global.APIKeys = {
 	'https://zenzapi.xyz': '4909faeb3e93',
+  'https://melcanz.com': 'TeamMars',
+  'https://api.xteam.xyz': 'db0e06bd9f096399',
+  'https://api.lolhuman.xyz': 'eafcf901640d1c599ae71519',
+  'https://indonesiaapi.herokuapp.com': 'kRdw3uhI',
+  'https://myselfff.herokuapp.com': '/docs',
+  'https://pencarikode.xyz': 'pais',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
 
 // Untuk Owner Ganti Aja Number Phone 62nya
