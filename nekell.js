@@ -514,10 +514,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             break
             case 'bokep': {
                 anu = `┌── Selamat Datang Di Vitur Bokep
-		Creepy & Disturbing Indonesia 18+
-		Creepy & Disturbing Indonesia 18+ Versi Anime
-		Creepy & Disturbing Indonesia
-`
+		Creepy & Disturbing Indonesia 18+`
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -1455,6 +1452,7 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
+
 0:04 ━━●──────────── 3:15     
         Koleksibot     
 ⇆ㅤ ㅤ◁ㅤ ❚❚ ㅤ▷ ㅤㅤ↻
@@ -1609,8 +1607,8 @@ break
                 nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-	        case 'motivasi': case 'dilanquote': case 'bucinquote': case 'katasenja': case 'puisi': {
-                let anu = await fetchJson(api('zenz', '/api/'+command, {}, 'apikey'))
+	        case 'quotes': case 'dilanquote': case 'bucinquote': case 'katasenja': case 'puisi': {
+                let anu = await fetchJson(api('indonesiaapi', '/api/'+command, {}, 'apikey'))
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: 'Next'}, type: 1}
                 ]
