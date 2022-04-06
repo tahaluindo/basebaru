@@ -1,23 +1,21 @@
 /**
-   * Create By Dika Ardnt.
-   * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/DikaArdnt
+   * Terima Kasih Telah Membeli Script Premium Kami
 */
 
 const fs = require('fs')
 const chalk = require('chalk')
 
-// Website Api
+// Website Api Tak Perlu Di Ganti Nanti Error
 global.APIs = {
 	zenz: 'https://zenzapi.xyz',
 }
 
-// Apikey Website Api
+// Apikey Website Api Tak Perlu Di Ganti Nanti Error
 global.APIKeys = {
 	'https://zenzapi.xyz': '4909faeb3e93',
 }
 
-// Other
+// Untuk Owner Ganti Aja Number Phone 62nya
 global.owner = ['62895969318181','62895969318181','62895969318181']
 global.ownernumber = 'wa.me/62895969318181'
 global.ownername = 'Koleksibot🔥'
