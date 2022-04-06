@@ -510,7 +510,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     }
                 }), { userJid: m.chat, quoted: m })
                 nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
+	    }
             break
             case 'bokep': {
                 anu = `┌── Selamat Datang Di Vitur Bokep
@@ -1531,21 +1531,9 @@ break
             }
             break
             case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
-                waifud = await axios.get('https://waifu.pics/api/sfw/waifu')             
-                var wbutss = [
-        {buttonId: `${prefix}waifu`, buttonText: {displayText: `➡️NEXT`}, type: 1},
-        {buttonId: `${prefix}neko`, buttonText: {displayText: `🐱Neko`}, type: 1},
-        ]
-      let buttonsMessage = {
-       image: {url:waifud.data.url},
-       caption:  `*Here is your waifu*`,
-      footer: '©MIZUHARA~Arus',
-      buttons: wbutss,
-      headerType: 4
-      }
-            await arus.sendMessage(m.chat,buttonsMessage, { quoted:m }).catch(err => {
-                    return('error..')
-                })
+                m.reply(mess.wait)
+                nekell.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/anime/'+command, 'apikey') }, caption: `Download From ${text}` }, { quoted: m})
+            }
             break
 	    case 'couple': {
                 m.reply(mess.wait)
