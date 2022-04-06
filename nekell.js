@@ -433,11 +433,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                nekell.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/DbHZN9w/20211231-171953.jpg' }, caption: `*Hai Sloerddd ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss` }, { quoted: m })
+                nekell.sendMessage(m.chat, { image: { url: 'https://user-images.githubusercontent.com/94370774/161889019-244057a4-86b2-4dc0-878d-aa6153e7ffed.jpg' }, caption: `*Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss` }, { quoted: m })
             }
             break
             case 'sc': {
-                m.reply('Script : https://github.com/koleksibot\n\n Dont Forget Give Star\n\nDonate : 6289695073357 (Dana)\nSaweria : https://saweria.co/nekellganss\nGopay : 081224413305\n\n Dont Forget Donate')
+                m.reply('Script : https://github.com/koleksibot\n\n Dont Forget Give Star\n\n Dont Forget Donate')
             }
             break
             case 'chat': {
@@ -2659,7 +2659,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 「 BERBIJAK LAH DALAM MENGGUNAKAN SESUATU🔥 」
 └───────⭓
 `
-                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/nekell.jpg') }, { upload: nekell.waUploadToServer })
+                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -2668,7 +2668,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                             hydratedButtons: [{
                                 "urlButton": {
                                     "displayText": 'B L O G G E R',
-                                    "url": 'https://koleksibot.blogspot.com/'
+                                    "url": 'https://www.rootsec.xyz/2022/03/script-bot-whatsapp-terbaru-versi-md-no.html/'
                                 }
                             }, {
                                 "urlButton": {
@@ -2687,8 +2687,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Script',
-                                    "id": 'sc'
+                                    "displayText": 'Donasi',
+                                    "id": 'donasi'
                                 }
                             }]
                         }
