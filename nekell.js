@@ -8,7 +8,7 @@ const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
 const { exec, spawn, execSync } = require("child_process")
-const axios = require('axios')
+const = require('axios')
 const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
@@ -1370,7 +1370,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'imagenobg': case 'removebg': case 'remove-bg': {
+            case 'imagenobg': case 'nowbg': case 'remove-bg': {
 	    if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
@@ -1531,9 +1531,21 @@ break
             }
             break
             case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
-                m.reply(mess.wait)
-                nekell.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/anime/'+command, 'apikey') }, caption: `Download From ${text}` }, { quoted: m})
-            }
+                waifud = await axios.get('https://waifu.pics/api/sfw/waifu')             
+                var wbutss = [
+        {buttonId: `${prefix}waifu`, buttonText: {displayText: `➡️NEXT`}, type: 1},
+        {buttonId: `${prefix}neko`, buttonText: {displayText: `🐱Neko`}, type: 1},
+        ]
+      let buttonsMessage = {
+       image: {url:waifud.data.url},
+       caption:  `*Here is your waifu*`,
+      footer: '©MIZUHARA~Arus',
+      buttons: wbutss,
+      headerType: 4
+      }
+            await arus.sendMessage(m.chat,buttonsMessage, { quoted:m }).catch(err => {
+                    return('error..')
+                })
             break
 	    case 'couple': {
                 m.reply(mess.wait)
