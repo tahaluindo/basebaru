@@ -472,7 +472,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-                anu = `┌──⭓ SCRIPT BOT
+                anu = `SCRIPT BOT
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -484,6 +484,50 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 "urlButton": {
                                     "displayText": 'D I S I N I',
                                     "url": 'https://www.rootsec.xyz/2022/03/script-bot-whatsapp-terbaru-versi-md-no.html/'
+                                }
+                            }, {
+                                "urlButton": {
+                                    "displayText": 'I N S T A G R A M',
+                                    "url": 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'P I N G',
+                                    "id": 'ping'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'O W N E R',
+                                    "id": 'owner'
+                                }  
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'M E N U',
+                                    "id": 'menu'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
+            break
+            case 'bokep': {
+                anu = `┌── Selamat Datang Di Vitur Bokep
+		Creepy & Disturbing Indonesia 18+
+		Creepy & Disturbing Indonesia 18+ Versi Anime
+		Creepy & Disturbing Indonesia
+`
+                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: anu,
+                            hydratedButtons: [{
+                                "urlButton": {
+                                    "displayText": 'B O K E P N Y A',
+                                    "url": 'https://pastebin.com/u/paceusa'
                                 }
                             }, {
                                 "urlButton": {
@@ -1042,7 +1086,7 @@ break
             }
             break
             case 'bcgc': case 'bcgroup': {
-                if (!isOwner) throw mess.owner
+                if (!isCreator) throw mess.owner
                 if (!text) throw `Text mana?\n\nExample : ${prefix + command} Jangan Lupa Donasi`
                 let getGroups = await nekell.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
@@ -1084,8 +1128,8 @@ break
             }
             break
             case 'bc': case 'broadcast': case 'bcall': {
-                if (!isOwner) throw mess.owner
-                if (!text) throw `Text mana?\n\nExample : ${prefix + command} bernekellboy ganteng`
+                if (!isCreator) throw mess.owner
+                if (!text) throw `Text mana?\n\nExample : ${prefix + command} hai`
                 let anu = await store.chats.all().map(v => v.id)
                 m.reply(`Mengirim Broadcast Ke ${anu.length} Chat\nWaktu Selesai ${anu.length * 1.5} detik`)
 		for (let yoi of anu) {
