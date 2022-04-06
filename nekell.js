@@ -1,7 +1,5 @@
 /**
-   * Create By Bernekellboy
-   * Contact Me on wa.me/6289695073357
-   * Follow https://github.com/koleksibot
+   * Create By Koleksibot
 */
 
 require('./config')
@@ -433,7 +431,44 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                nekell.sendMessage(m.chat, { image: { url: 'https://user-images.githubusercontent.com/94370774/161889019-244057a4-86b2-4dc0-878d-aa6153e7ffed.jpg' }, caption: `*Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss` }, { quoted: m })
+                anu = `┌──⭓ *「 *Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/6289695073357 (Owner)\n\nDonate For Me : \n\n⭔ Dana : 089695073357\n⭔ Saweria : https://saweria.co/nekellganss 」*
+`
+                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: anu,
+                            hydratedButtons: [{
+                                "urlButton": {
+                                    "displayText": 'B L O G G E R',
+                                    "url": 'https://www.rootsec.xyz/2022/03/script-bot-whatsapp-terbaru-versi-md-no.html/'
+                                }
+                            }, {
+                                "urlButton": {
+                                    "displayText": 'I N S T A G R A M',
+                                    "url": 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'P I N G',
+                                    "id": 'ping'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'Owner',
+                                    "id": 'owner'
+                                }  
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'B E R D O N A S I',
+                                    "id": 'donasi'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
             case 'sc': {
@@ -1341,8 +1376,9 @@ break
                     image: { url: anu.thumbnail },
                     caption: `
 0:04 ━━●──────────── 3:15     
-              
+        Koleksibot     
 ⇆ㅤ ㅤ◁ㅤ ❚❚ ㅤ▷ ㅤㅤ↻
+
 ⭔ Title : ${anu.title}
 ⭔ Ext : Search
 ⭔ ID : ${anu.videoId}
@@ -2344,13 +2380,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 anu = `┌──⭓ *「 Koleksibot Base V2 」*
  Hai Kak ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
-│📍 Si Beban: ${pushname}
+│📍 Si Beban : ${pushname}
 │📍 Creator : ${ownername}
 │📍 Prefix  : ${prefix}
 │📍 Owner   : ${ownernumber}
 │📍 Quotes  : ${quotes}
 
-「 O p e n  S e w a  B o t  ! 」
 ╭─❒ 「 Dashboard Menu Bot 」🤖
 • *Link Grup Official Bernekellbot* : https://chat.whatsapp.com/J4ii7zkiySP9s6xdlZDggp
 
