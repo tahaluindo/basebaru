@@ -18,28 +18,29 @@ global.APIKeys = {
 }
 
 // Other
-global.owner = ['62895369318181','62895369318181','62895369318181']
-global.ownernumber = 'wa.me/62895369318181'
-global.ownername = 'Koleksibot'
-global.botname = 'Base Baru'
-global.packname = '© Koleksibot'
-global.aku = 'wa.me/62895369318181'
-global.ahmad = 'wa.me/62895369318181'
+global.owner = ['6289695073357','6281224413305','6289695073357']
+global.ownernumber = 'wa.me/6289695073357'
+global.ownername = 'Bernekellboy🔥'
+global.botname = 'Bernekell-Bot🤖'
+global.packname = '© BERNEKELLBOT-MD'
+global.fatih = 'wa.me/6281382420312'
+global.ahmad = 'wa.me/6281515474080'
+global.ameliavoss = 'wa.me/6285215916046'
 global.allfriend = 'All My Friends And All Creator Bot Wangsap'
 global.quotes = '🔺Jangan pernah sombong dengan apa yang lu punya karna, itu semua hanyalah titipan yang akan hilang pada masa nya!.'
-global.author = 'Ig : @cyber_mrlinkerrorsystemoffical'
+global.author = 'Ig : @bernekellboy_'
 global.sessionName = 'nekell'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
-    success: '✓ Success Bro',
+    success: '✓ Success Sloerdddd',
     admin: 'Fitur Khusus Admin Group!',
     botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!',
     owner: 'Fitur Khusus Owner Bot',
     group: 'Fitur Digunakan Hanya Untuk Group!',
     private: 'Fitur Digunakan Hanya Untuk Private Chat!',
     bot: 'Fitur Khusus Pengguna Nomor Bot',
-    wait: '⌛ Sabar Loading...',
+    wait: '⌛ Sabar Sloerddd Loading...',
 }
 global.thumb = fs.readFileSync('./lib/nekell.jpg')
 
