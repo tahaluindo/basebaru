@@ -1340,6 +1340,9 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
+0:04 ━━●──────────── 3:15     
+              
+⇆ㅤ ㅤ◁ㅤ ❚❚ ㅤ▷ ㅤㅤ↻
 ⭔ Title : ${anu.title}
 ⭔ Ext : Search
 ⭔ ID : ${anu.videoId}
@@ -1931,6 +1934,9 @@ break
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
 			caption: `
+0:04 ━━●──────────── 3:15     
+              
+⇆ㅤ ㅤ◁ㅤ ❚❚ ㅤ▷ ㅤㅤ↻
 ⭔ Title : ${anu.title}
 ⭔ Author : ${anu.author.name}
 ⭔ Like : ${anu.like}
@@ -2335,8 +2341,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'list': case 'help': case '?': case 'menu': {
-                anu = `┌──⭓ *「 BERNEKELLBOT 」*
- Hai Orang Yang Paling Beban ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
+                anu = `┌──⭓ *「 Koleksibot Base V2 」*
+ Hai Kak ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
 │📍 Si Beban: ${pushname}
 │📍 Creator : ${ownername}
@@ -2345,15 +2351,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │📍 Quotes  : ${quotes}
 
 「 O p e n  S e w a  B o t  ! 」
-╭─❒ 「 Sewa Bot Untuk Kebutuhan 」🤖
-├ LIST HARGA IN HERE! 👇
-├ 
-├ 1 BULAN : 15K
-├ 2 MINGGU : 10K
-├
-├ *NOTE : INI BELUM TERMASUK MENJADI MEMBER PREMIUM!*
-╰❒ 「 📍 BANG KENAPA KOK MAHAL? YA KARNA KALO BOT ITU GAMPANG KE BANNED OLEH WHATSAPP! 📍 」
-
+╭─❒ 「 Dashboard Menu Bot 」🤖
 • *Link Grup Official Bernekellbot* : https://chat.whatsapp.com/J4ii7zkiySP9s6xdlZDggp
 
 ┌──⭓ *Group Menu*
@@ -2655,8 +2653,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │📌 Ameliavoss : ${ameliavoss}
 │📌 ${allfriend}
 │
-│🏴‍☠️ Jangan Lupa Donasi Agar Bot Bisa Selalu On Tiap Hari,Tiap Jam,Tiap Menit,Tiap Detik.
-「 BERBIJAK LAH DALAM MENGGUNAKAN SESUATU🔥 」
 └───────⭓
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
@@ -2673,11 +2669,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                             }, {
                                 "urlButton": {
                                     "displayText": 'I N S T A G R A M',
-                                    "url": 'https://instagram.com/'
+                                    "url": 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Status Bot',
+                                    "displayText": 'P I N G',
                                     "id": 'ping'
                                 }
                             }, {
@@ -2687,7 +2683,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Donasi',
+                                    "displayText": 'B E R D O N A S I',
                                     "id": 'donasi'
                                 }
                             }]
