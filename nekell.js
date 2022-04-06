@@ -2455,7 +2455,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'list': case 'help': case '?': case 'menu': {
-                anu = `┌──⭓ *「 Koleksibot Base V2 」*
+                anu = `┌──⭓ *「 Koleksibot Base V3 」*
  Hai Kak ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
 │📍 Username : ${pushname}
@@ -2791,8 +2791,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'O W N E R',
-                                    "id": 'owner'
+                                    "displayText": 'S I M P L E',
+                                    "id": 'command'
                                 }  
                             }, {
                                 "quickReplyButton": {
@@ -2806,6 +2806,502 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
+// RAKIT SENDIRI YAK🗿🗿🗿
+case 'command':
+let sectionnya= [{
+								"title": "Fitur Grup",
+								"rows": [
+									{
+										"title": "Grup Fitur",
+										"description": "Menampilkan Fitur Grup",
+										"rowId": `${prefix}grupmenu`
+									}
+								]
+							},
+							{
+								"title": "Bot Menu",
+								"rows": [
+									{
+										"title": "ALL Fitur",
+										"description": "Menampilkan Semua Fitur!",
+										"rowId": `${prefix}allmenu`
+									},
+									{
+										"title": "Download Fitur",
+										"description": "Menampilkan Download Menu",
+										"rowId": `${prefix}downloadmenu`
+									},
+									{
+										"title": "Search Fitur",
+										"description": "Menampilkan Search Fitur",
+										"rowId": `${prefix}searchmenu`
+									},
+									{
+										"title": "Random Fitur",
+										"description": "Menampilkan random Fitur",
+										"rowId": `${prefix}randommenu`
+										},
+										{
+											"title": "Image Fitur",
+										"description": "Menampilkan image Fitur",
+										"rowId": `${prefix}imagemenu`
+										},
+										{
+											"title": "Fun",
+										"description": "Menampilkan Fun Fitur",
+										"rowId": `${prefix}funmenu`
+										},
+										{
+										"title": "primbon Fitur",
+										"description": "Menampilkan Primbon Fitur",
+										"rowId": `${prefix}primbonmenu`
+										},
+										{
+											"title": "Convert Fitur",
+										"description": "Menampilkan Convert Fitur",
+										"rowId": `${prefix}convertmenu`
+										},
+										{
+										"title": "No Category",
+										"description": "Menampilkan NoCategory Fitur",
+										"rowId": `${prefix}nocategorymenu`
+										},
+										{
+											"title": "Ephoto Fitur",
+										"description": "Menampilkan Ephoto Fitur",
+										"rowId": `${prefix}ephotomenu`
+										},
+										{
+											"title": "TextPro Fitur",
+										"description": "Menampilkan TextPro Fitur",
+										"rowId": `textpromenu`
+										},
+										{
+											"title": "Database Fitur",
+										"description": "Menampilkan Database Fitur",
+										"rowId": `${prefix}databasemenu`
+										},
+										{
+										"title": "Image Hiburan",
+										"description": "menampilkan Image Hiburan",
+										"rowId": `${prefix}immageemenu`
+										},
+										{
+										"title": "Tolls Fitur",
+										"description": "menampilkan Tolls Fitur",
+										"rowId": `${prefix}tollsmenu`
+										},
+										{
+											"title": "Voice Changer Fitur",
+										"description": "Menampilkan Voice Changer Fitur",
+										"rowId": `${prefix}voicemenu`
+										},
+								        {
+										"title": "Religion Fitur",
+										"description": "menampilkan Fitur Agama - Agama",
+										"rowId": `${prefix}religionmenu`
+										}
+								]
+							},
+							{
+								"title": "Chating Sesama User📞",
+								"rows": [
+									{
+										"title": "Anonymous Chat",
+										"description": "menampilkan Fitur Anonymous Chat",
+										"rowId": `${prefix}anonymouschatmenu`
+									}
+								]
+							},
+							{
+								"title": "System Group👮",
+								"rows": [
+									{
+										"title": "Group Sistem Fitur",
+										"description": "menampilkan Fitur System Grup",
+										"rowId": `${prefix}sistemmenu`
+									}
+								]
+							},
+							{
+								"title": "Owner Command",
+								"rows": [
+									{
+										"title": "Owner Fitur",
+										"description": "menampilkan Owner Fitur ( Khusus Owner )",
+										"rowId": `${prefix}ownermenu`
+									}
+								]
+							},
+							{
+								"title": "Thanks To",
+								"rows": [
+									{
+										"title": "Contributor",
+										"description": "menampilkan Nama Teman - Teman Saya Yang Sudah Membantu Merakit Bot Ini !!",
+										"rowId": `${prefix}tqtt`
+									}
+								]
+							}
+						]
+nekell.sendList(m.chat, `Halo ${pushname}`, `───❑ INFO BOT
+
+LIBRAY:  *BAILEYS MD*`, "Koleksibot", "SIMPLE MENU ", sectionnya, { quoted: m})
+break
+case 'grupmenu': {
+	            anu = `
+  *Group Menu*
+  
+  ${prefix}linkgroup
+  ${prefix}ephemeral [option]
+  ${prefix}setpp
+  ${prefix}setname _<text>_
+  ${prefix}group [option]
+  ${prefix}editinfo [option]
+  ${prefix}grupinfo
+  ${prefix}add @user
+  ${prefix}kick @user
+  ${prefix}promote @user
+  ${prefix}demote @user
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'downloadmenu': {
+	anu = `
+	*Downloader Menu*
+  
+  ${prefix}tiktoknowm _<url>_
+  ${prefix}tiktokwm _<url>_
+  ${prefix}tiktokmp3 _<url>_
+  ${prefix}instagram _<url>_
+  ${prefix}ig2 _<url>_
+  ${prefix}igreels _<url>_
+  ${prefix}igtv _<url>_
+  ${prefix}twitter _<url>_
+  ${prefix}twittermp3 _<url>_
+  ${prefix}facebook _<url>_
+  ${prefix}pinterestdl _<url>_
+  ${prefix}ytmp3 _<url>_
+  ${prefix}ytmp4 _<url>_
+  ${prefix}getmusic _<query>_
+  ${prefix}getvideo _<query>_  
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+            break 
+            case 'searchmenu': {
+            	anu = `
+              *Search Menu*
+  
+  ${prefix}play _<query>_
+  ${prefix}yts _<query>_
+  ${prefix}google _<query>_
+  ${prefix}gimage _<query>_
+  ${prefix}pinterest _<query>_
+  ${prefix}wallpaper _<query>_
+  ${prefix}wikimedia _<query>_
+  ${prefix}ytsearch _<query>_
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'randommenu': {
+	anu = `
+	*Random Menu*
+  
+  ${prefix}coffe
+  ${prefix}porno
+  ${prefix}hentai
+  ${prefix}quotesanime
+  ${prefix}motivasi
+  ${prefix}dilanquote
+  ${prefix}bucinquote
+  ${prefix}katasenja
+  ${prefix}puisi
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'imagemenu': {
+	anu = `
+	*Image Menu*
+  
+  ${prefix}anime
+  ${prefix}waifu
+  ${prefix}husbu
+  ${prefix}neko
+  ${prefix}shinobu
+  ${prefix}megumin
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'funmenu': {
+	anu = `
+	*Fun Menu*
+  
+  ${prefix}halah
+  ${prefix}hilih
+  ${prefix}huluh
+  ${prefix}heleh
+  ${prefix}holoh
+  ${prefix}jadian
+  ${prefix}jodohku
+  ${prefix}family100
+  ${prefix}tebak [option]
+  ${prefix}math [mode]  
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'voicemenu': {
+	anu = `
+	*Voice Changer*
+	
+${prefix}bass
+${prefix}blown
+${prefix}deep
+${prefix}earrape
+${prefix}fast
+${prefix}fat
+${prefix}nightcore
+${prefix}reverse
+${prefix}robot
+${prefix}slow
+${prefix}tupai
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'religionmenu': {
+	anu = `
+	*Religion Menu*
+	
+_Islamic_
+${prefix}iqra
+${prefix}hadist
+${prefix}alquran
+${prefix}juzamma
+${prefix}tafsirsurah
+
+_Kristian_
+${prefix}alkitab
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'immageemenu':  {
+	anu = `
+*Image Hiburan*
+
+${prefix}meme
+${prefix}ppcouple
+${prefix}darkjoke
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'tollsmenu': {
+	anu = `
+*Tolls Menu*
+
+${prefix}ssweb-hp
+${prefix}ssweb-pc
+${prefix}translate
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+
+case 'primbonmenu': {
+	anu = `
+	*Primbon Menu*
+  
+  ${prefix}nomorhoki
+  ${prefix}artimimpi
+  ${prefix}artinama
+  ${prefix}ramaljodoh
+  ${prefix}ramaljodohbali
+  ${prefix}suamiistri
+  ${prefix}ramalcinta
+  ${prefix}cocoknama
+  ${prefix}pasangan
+  ${prefix}jadiannikah
+  ${prefix}sifatusaha
+  ${prefix}rezeki
+  ${prefix}pekerjaan
+  ${prefix}nasib
+  ${prefix}penyakit
+  ${prefix}tarot
+  ${prefix}fengshui
+  ${prefix}haribaik
+  ${prefix}harisangar
+  ${prefix}harisial
+  ${prefix}nagahari
+  ${prefix}arahrezeki
+  ${prefix}peruntungan
+  ${prefix}weton
+  ${prefix}karakter
+  ${prefix}keberuntungan
+  ${prefix}memancing
+  ${prefix}masasubur
+  ${prefix}zodiak
+  ${prefix}shio
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'convertmenu': {
+	anu = `
+	*Convert Menu*
+  
+${prefix}toimage
+${prefix}removebg
+${prefix}sticker
+${prefix}emojimix
+${prefix}tovideo
+${prefix}togif
+${prefix}tourl
+${prefix}tovn
+${prefix}tomp3
+${prefix}toaudio
+${prefix}ebinary
+${prefix}dbinary
+${prefix}styletext
+${prefix}ttp
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'nocategorymenu': {
+	anu = `
+	*Main Menu*
+  
+  ${prefix}ping
+  ${prefix}owner
+  ${prefix}menu / ${prefix}help / ${prefix}?
+  ${prefix}delete
+  ${prefix}infochat
+  ${prefix}quoted
+  ${prefix}listpc
+  ${prefix}listgc
+  ${prefix}listonline
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'ephotomenu': {
+	anu = `
+	*Ephoto Menu*
+
+${prefix}ffcover
+${prefix}crossfire
+${prefix}galaxy
+${prefix}glass
+${prefix}neon
+${prefix}beach
+${prefix}blackpink
+${prefix}igcertificate
+${prefix}ytcertificate
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'textpromenu': {
+	anu = `
+	*Text Pro Menu*
+
+${prefix}3dchristmas
+${prefix}3ddeepsea
+${prefix}americanflag
+${prefix}3dscifi
+${prefix}3drainbow
+${prefix}3dwaterpipe
+${prefix}halloweenskeleton
+${prefix}sketch
+${prefix}bluecircuit
+${prefix}space
+${prefix}metallic
+${prefix}fiction
+${prefix}greenhorror
+${prefix}transformer
+${prefix}berry
+${prefix}thunder
+${prefix}magma
+${prefix}3dcrackedstone
+${prefix}3dneonlight
+${prefix}impressiveglitch
+${prefix}naturalleaves
+${prefix}fireworksparkle
+${prefix}matrix
+${prefix}dropwater
+${prefix}harrypotter
+${prefix}foggywindow
+${prefix}neondevils
+${prefix}christmasholiday
+${prefix}3dgradient
+${prefix}blackpink
+${prefix}gluetext
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'databasemenu': {
+	anu = `
+	*Database Menu*
+  
+  ${prefix}setcmd
+  ${prefix}listcmd
+  ${prefix}delcmd
+  ${prefix}lockcmd
+  ${prefix}addmsg
+  ${prefix}listmsg
+  ${prefix}getmsg
+  ${prefix}delmsg
+  `
+  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'anonymouschatmenu': {
+	anu = `
+	*Anonymous Chat*
+	${prefix}start ( Memulai Chating )
+	${prefix}next ( Next user )
+	${prefix}stop ( stop anonymous chat )
+	${prefix}sendkontak ( Khusus Di Dalam Room Anonymous chat )
+	`
+	  textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+case 'sistemmenu': {
+	anu = `
+${prefix}antilink On/Off
+${prefix}mute On/Off
+${prefix}antiwame On/Off
+`
+textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
+  case 'ownermenu': {
+  	anu = `
+  *Owner Menu*
+  
+${prefix}chat [option]
+${prefix}join [link]
+${prefix}leave
+${prefix}block @user
+${prefix}unblock @user
+${prefix}bcgroup
+${prefix}bcall
+${prefix}restart
+${prefix}autobio On/Off
+${prefix}autoread On/Off
+${prefix}autoketik On/Off
+  `
+    textTemplateButtons(m.chat, anu, `Koleksibot`, btn)
+            }
+break
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
