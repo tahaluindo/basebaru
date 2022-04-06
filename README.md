@@ -1,4 +1,3 @@
-# Bernekellbot
 Script WhatsApp Bot Multi Device Premium User Buy
 
 This is Script of WhatsApp multi device, working with [`@adiwajshing/baileys`](https://github.com/adiwajshing/baileys-md)
