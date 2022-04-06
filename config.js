@@ -16,8 +16,8 @@ global.APIKeys = {
 }
 
 // Untuk Owner Ganti Aja Number Phone 62nya
-global.owner = ['62895969318181','62895969318181','62895969318181']
-global.ownernumber = 'wa.me/62895969318181'
+global.owner = ['62895369318181','62895369318181','62895369318181']
+global.ownernumber = 'wa.me/62895369318181'
 global.ownername = 'Koleksibot🔥'
 global.botname = 'Koleksi-Bot🤖'
 global.packname = '© Koleksibot'
