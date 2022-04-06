@@ -1,5 +1,5 @@
 {
-  "name": "bernekellbot",
+  "name": "Premium User",
   "version": "1.2.3",
   "description": "WhatsApp Using Lib Baileys Multi Device",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "baileys-md",
     "bot"
   ],
-  "author": "Bernekellboy.",
+  "author": "Koleksibot",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "^4.0.1",
@@ -57,10 +57,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bernekellboy/Bernekellboy.git"
+    "url": "git+https://github.com/tahaluindo/basebaru.git"
   },
   "bugs": {
-    "url": "https://github.com/Bernekellboy"
+    "url": "https://github.com/tahaluindo"
   },
-  "homepage": "https://github.com/Bernekellboy"
+  "homepage": "https://github.com/tahaluindo"
 }
