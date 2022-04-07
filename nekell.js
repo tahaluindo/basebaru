@@ -1437,8 +1437,8 @@ break
                     headerType: 4
                 }
                 nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
-        })
-        }
+                    }
+            break        
 // COPAS KASIH KREDIT DEK !!!!!
 	    case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
