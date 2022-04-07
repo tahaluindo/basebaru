@@ -1438,34 +1438,36 @@ break
                 }
                 nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
                     }
-            break        
+                    }
+        break
+
 // COPAS KASIH KREDIT DEK !!!!!
 	    case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                    nekell = `
-📌 Title : ${anu.title}
-📌 Ext : Search
-📌 ID : ${anu.videoId}
-📌 Duration : ${anu.timestamp}
-📌 Viewers : ${anu.views}
-📌 Upload At : ${anu.ago}
-📌 Author : ${anu.author.name}
-📌 Channel : ${anu.author.url}
-📌 Description : ${anu.description}
-📌 Url : ${anu.url}`
-message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   nekell.waUploadToServer })
+                    kahfs = `
+⭔ Title : ${anu.title}
+⭔ Ext : Search
+⭔ ID : ${anu.videoId}
+⭔ Duration : ${anu.timestamp}
+⭔ Viewers : ${anu.views}
+⭔ Upload At : ${anu.ago}
+⭔ Author : ${anu.author.name}
+⭔ Channel : ${anu.author.url}
+⭔ Description : ${anu.description}
+⭔ Url : ${anu.url}`
+message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   hisoka.waUploadToServer })
                 template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
-                            hydratedContentText: nekell,
+                            hydratedContentText: kahfs,
                             hydratedFooterText: `Playing To ${text}`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Source Code Video',
+                                    displayText: 'Source Code Vidio',
                                     url: `${anu.url}`
                                 }
                             }, {
@@ -1481,7 +1483,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                         }
                     }
                 }), { userJid: m.chat, quoted: m })
-                  nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                  hisoka.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
 	    case 'ytmp3': case 'ytaudio': {
