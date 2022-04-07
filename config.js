@@ -37,8 +37,9 @@ global.ownernumber = 'wa.me/62895369318181'
 global.ownername = 'Koleksibot🔥'
 global.botname = 'Koleksi-Bot🤖'
 global.packname = '© Koleksibot'
+global.ahmad = 'wa.me/6283830086398'
 global.fatih = 'wa.me/6281382420312'
-global.ahmad = 'wa.me/62895969318181'
+global.aku = 'wa.me/62895969318181'
 global.ameliavoss = 'wa.me/6285215916046'
 global.allfriend = 'All My Friends And All Creator Bot Wangsap'
 global.quotes = 'Hati yang terluka mungkin masih membekas. Semoga di bulan suci Ramadan ini, kita dapat saling memaafkan. Selamat menunaikan ibadah puasa.'
@@ -48,9 +49,9 @@ global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
     success: '✓ Success',
-    admin: 'Fitur Khusus Admin Group!',
+    admin: 'Fitur Ini Khusus Admin Group!',
     botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!',
-    owner: 'Fitur Khusus Owner Bot',
+    owner: 'Fitur Ini Khusus Pemilik Bot',
     group: 'Fitur Digunakan Hanya Untuk Group!',
     private: 'Fitur Digunakan Hanya Untuk Private Chat!',
     bot: 'Fitur Khusus Pengguna Nomor Bot',
