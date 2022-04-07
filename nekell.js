@@ -433,7 +433,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                anu = `┌──⭓ *Hai ${m.pushName}*\n\n Bot Rental Prices\n⭔ 10K Per Group via Dana 1 Month\n⭔ 13K via pulsa 1 Month\n\n Premium Price Bot\n⭔ 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/ (Owner)\n\nDonate For Me : \n\n⭔ Dana : \n⭔ Saweria : https://saweria.co/
+                anu = ` *Hai ${m.pushName}*\n\n Bot Rental Prices\n 10K Per Group via Dana 1 Month\n 13K via pulsa 1 Month\n\n Premium Price Bot\n 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/ (Owner)\n\nDonate For Me : \n\n Dana : \n Saweria : https://saweria.co/
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -474,7 +474,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-                anu = `SCRIPT BOT 🍁
+                anu = `SCRIPT BOT 
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -515,8 +515,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 	    }
             break
             case 'gcbot': {
-                anu = `📌 Selamat Datang Di Vitur Bokep
-		Creepy & Disturbing Indonesia 18+`
+                anu = ` Hallo Gaes Join Yok`
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -705,9 +704,9 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
-            let jawab = `ðŸ‘«Jodoh mu adalah
+            let jawab = `Jodoh mu adalah
 
-@${me.split('@')[0]} â¤ï¸ @${jodoh.split('@')[0]} :v`
+@${me.split('@')[0]} @${jodoh.split('@')[0]} :v`
             let ments = [me, jodoh]
             let buttons = [
                         { buttonId: 'jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
@@ -829,11 +828,9 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
-let teks = `â•â•âœªã€˜ *ðŸ‘¥ Tag All* ã€™âœªâ•â•
- 
- âž² *Pesan : ${q ? q : 'kosong'}*\n\n`
+let teks = `*Pesan : ${q ? q : 'kosong'}*\n\n`
                 for (let mem of participants) {
-                teks += `ðŸ @${mem.id.split('@')[0]}\n`
+                teks += `@${mem.id.split('@')[0]}\n`
                 }
                 nekell.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
@@ -861,168 +858,6 @@ async function stylizeText(text) {
 }
 m.reply(Object.entries(await stylizeText(text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text)).map(([name, value]) => `*${name}*\n${value}`).join`\n\n`)
 }
-break
-               case 'vote': {
-            if (!m.isGroup) throw mess.group
-            if (m.chat in vote) throw `_Masih ada vote di chat ini!_\n\n*${prefix}hapusvote* - untuk menghapus vote`
-            if (!text) throw `Masukkan Alasan Melakukan Vote, Example: *${prefix + command} Owner Ganteng*`
-            m.reply(`Vote dimulai!\n\n*${prefix}upvote* - untuk ya\n*${prefix}devote* - untuk tidak\n*${prefix}cekvote* - untuk mengecek vote\n*${prefix}hapusvote* - untuk menghapus vote`)
-            vote[m.chat] = [q, [], []]
-            await sleep(1000)
-            upvote = vote[m.chat][1]
-            devote = vote[m.chat][2]
-            teks_vote = `*ã€Œ VOTE ã€*
-
-*Alasan:* ${vote[m.chat][0]}
-
-â”Œã€” UPVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][1].length}
-â”‚
-â”‚ 
-â””â”€â”€â”€â”€
-
-â”Œã€” DEVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][2].length}
-â”‚
-â”‚ 
-â””â”€â”€â”€â”€
-
-*${prefix}hapusvote* - untuk menghapus vote`
-let buttonsVote = [
-  {buttonId: `${prefix}upvote`, buttonText: {displayText: 'ðš„ð™¿ðš…ð™¾ðšƒð™´'}, type: 1},
-  {buttonId: `${prefix}devote`, buttonText: {displayText: 'ð™³ð™´ðš…ð™¾ðšƒð™´'}, type: 1}
-]
-
-            let buttonMessageVote = {
-                text: teks_vote,
-                footer: nekell.user.name,
-                buttons: buttonsVote,
-                headerType: 1
-            }
-            nekell.sendMessage(m.chat, buttonMessageVote)
-	    }
-            break
-               case 'upvote': {
-            if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
-            isVote = vote[m.chat][1].concat(vote[m.chat][2])
-            wasVote = isVote.includes(m.sender)
-            if (wasVote) throw 'Kamu Sudah Vote'
-            vote[m.chat][1].push(m.sender)
-            menvote = vote[m.chat][1].concat(vote[m.chat][2])
-            teks_vote = `*ã€Œ VOTE ã€*
-
-*Alasan:* ${vote[m.chat][0]}
-
-â”Œã€” UPVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][1].length}
-${vote[m.chat][1].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-â”Œã€” DEVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][2].length}
-${vote[m.chat][2].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-*${prefix}hapusvote* - untuk menghapus vote`
-            let buttonsUpvote = [
-              {buttonId: `${prefix}upvote`, buttonText: {displayText: 'ðš„ð™¿ðš…ð™¾ðšƒð™´'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: 'ð™³ð™´ðš…ð™¾ðšƒð™´'}, type: 1}
-            ]
-
-            let buttonMessageUpvote = {
-                text: teks_vote,
-                footer: nekell.user.name,
-                buttons: buttonsUpvote,
-                headerType: 1,
-                mentions: menvote
-             }
-            nekell.sendMessage(m.chat, buttonMessageUpvote)
-	    }
-             break
-                case 'devote': {
-            if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
-            isVote = vote[m.chat][1].concat(vote[m.chat][2])
-            wasVote = isVote.includes(m.sender)
-            if (wasVote) throw 'Kamu Sudah Vote'
-            vote[m.chat][2].push(m.sender)
-            menvote = vote[m.chat][1].concat(vote[m.chat][2])
-            teks_vote = `*ã€Œ VOTE ã€*
-
-*Alasan:* ${vote[m.chat][0]}
-
-â”Œã€” UPVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][1].length}
-${vote[m.chat][1].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-â”Œã€” DEVOTE ã€•
-â”‚ 
-â”œ Total: ${vote[m.chat][2].length}
-${vote[m.chat][2].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-*${prefix}hapusvote* - untuk menghapus vote`
-            let buttonsDevote = [
-              {buttonId: `${prefix}upvote`, buttonText: {displayText: 'ðš„ð™¿ðš…ð™¾ðšƒð™´'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: 'ð™³ð™´ðš…ð™¾ðšƒð™´'}, type: 1}
-            ]
-
-            let buttonMessageDevote = {
-                text: teks_vote,
-                footer: nekell.user.name,
-                buttons: buttonsDevote,
-                headerType: 1,
-                mentions: menvote
-            }
-            nekell.sendMessage(m.chat, buttonMessageDevote)
-	}
-            break
-                 
-case 'cekvote':
-if (!m.isGroup) throw mess.group
-if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
-teks_vote = `*ã€Œ VOTE ã€*
-
-*Alasan:* ${vote[m.chat][0]}
-
-â”Œã€” UPVOTE ã€•
-â”‚ 
-â”œ Total: ${upvote.length}
-${vote[m.chat][1].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-â”Œã€” DEVOTE ã€•
-â”‚ 
-â”œ Total: ${devote.length}
-${vote[m.chat][2].map((v, i) => `â”œ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
-â”‚ 
-â””â”€â”€â”€â”€
-
-*${prefix}hapusvote* - untuk menghapus vote
-
-
-Â©${nekell.user.id}
-`
-nekell.sendTextWithMentions(m.chat, teks_vote, m)
-break
-		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
-            delete vote[m.chat]
-            m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
-	    }
             break
                case 'group': case 'grup': {
                 if (!m.isGroup) throw mess.group
@@ -1176,8 +1011,8 @@ break
                     let read = i.readTimestamp
                     let unread = i.receiptTimestamp
                     let waktu = read ? read : unread
-                    teks += `ðŸ @${i.userJid.split('@')[0]}\n`
-                    teks += ` â”—â”ðŸ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ðŸ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                    teks += `@${i.userJid.split('@')[0]}\n`
+                    teks += ` â”—â”*Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
                 }
                 nekell.sendTextWithMentions(m.chat, teks, m)
             }
@@ -1212,7 +1047,7 @@ break
              case 'listonline': case 'liston': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    nekell.sendText(m.chat, 'List Online:\n\n' + online.map(v => 'ðŸ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    nekell.sendText(m.chat, 'List Online:\n\n' + online.map(v => '@' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
@@ -1402,7 +1237,7 @@ break
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `ðŸ No : ${no++}\nðŸ Type : ${i.type}\nðŸ Video ID : ${i.videoId}\nðŸ Title : ${i.title}\nðŸ Views : ${i.views}\nðŸ Duration : ${i.timestamp}\nðŸ Upload At : ${i.ago}\nðŸ Author : ${i.author.name}\nðŸ Url : ${i.url}\n\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n`
+                    teks += `No : ${no++}\nType : ${i.type}\nVideo ID : ${i.videoId}\nTitle : ${i.title}\nViews : ${i.views}\nDuration : ${i.timestamp}\nUpload At : ${i.ago}\nAuthor : ${i.author.name}\nUrl : ${i.url}\n\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n`
                 }
                 nekell.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -1413,9 +1248,9 @@ break
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
                 for (let g of res) {
-                teks += `ðŸ *Title* : ${g.title}\n`
-                teks += `ðŸ *Description* : ${g.snippet}\n`
-                teks += `ðŸ *Link* : ${g.link}\n\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n`
+                teks += `*Title* : ${g.title}\n`
+                teks += `*Description* : ${g.snippet}\n`
+                teks += `*Link* : ${g.link}\n\n\n\n`
                 } 
                 m.reply(teks)
                 })
@@ -1433,8 +1268,8 @@ break
                 let buttonMessage = {
                     image: { url: images },
                     caption: `*-------ã€Œ GIMAGE SEARCH ã€-------*
-ðŸ¤  *Query* : ${text}
-ðŸ”— *Media Url* : ${images}`,
+*Query* : ${text}
+*Media Url* : ${images}`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1455,16 +1290,16 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-ðŸ Title : ${anu.title}
-ðŸ Ext : Search
-ðŸ ID : ${anu.videoId}
-ðŸ Duration : ${anu.timestamp}
-ðŸ Viewers : ${anu.views}
-ðŸ Upload At : ${anu.ago}
-ðŸ Author : ${anu.author.name}
-ðŸ Channel : ${anu.author.url}
-ðŸ Description : ${anu.description}
-ðŸ Url : ${anu.url}`,
+Title : ${anu.title}
+Ext : Search
+ID : ${anu.videoId}
+Duration : ${anu.timestamp}
+Viewers : ${anu.views}
+Upload At : ${anu.ago}
+Author : ${anu.author.name}
+Channel : ${anu.author.url}
+Description : ${anu.description}
+Url : ${anu.url}`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1478,7 +1313,7 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                nekell.sendImage(m.chat, media.thumb, `ðŸ Title : ${media.title}\nðŸ File Size : ${media.filesizeF}\nðŸ Url : ${isUrl(text)}\nðŸ Ext : MP3\nðŸ Resolusi : ${args[1] || '128kbps'}`, m)
+                nekell.sendImage(m.chat, media.thumb, `Title : ${media.title}\nFile Size : ${media.filesizeF}\nUrl : ${isUrl(text)}\nExt : MP3\nResolusi : ${args[1] || '128kbps'}`, m)
                 nekell.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -1488,7 +1323,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                nekell.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `ðŸ Title : ${media.title}\nðŸ File Size : ${media.filesizeF}\nðŸ Url : ${isUrl(text)}\nðŸ Ext : MP3\nðŸ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                nekell.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `Title : ${media.title}\nFile Size : ${media.filesizeF}\nUrl : ${isUrl(text)}\nExt : MP3\nResolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -1501,7 +1336,7 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                nekell.sendImage(m.chat, media.thumb, `ðŸ Title : ${media.title}\nðŸ File Size : ${media.filesizeF}\nðŸ Url : ${isUrl(text)}\nðŸ Ext : MP3\nðŸ Resolusi : ${args[1] || '128kbps'}`, m)
+                nekell.sendImage(m.chat, media.thumb, `Title : ${media.title}\nFile Size : ${media.filesizeF}\nUrl : ${isUrl(text)}\nExt : MP3\nResolusi : ${args[1] || '128kbps'}`, m)
                 nekell.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -1515,7 +1350,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                nekell.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `ðŸ Title : ${media.title}\nðŸ File Size : ${media.filesizeF}\nðŸ Url : ${isUrl(text)}\nðŸ Ext : MP3\nðŸ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                nekell.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `Title : ${media.title}\nFile Size : ${media.filesizeF}\nUrl : ${isUrl(text)}\nExt : MP3\nResolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
@@ -1523,7 +1358,7 @@ break
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                nekell.sendMessage(m.chat, { image: { url: result }, caption: 'ðŸ Media Url : '+result }, { quoted: m })
+                nekell.sendMessage(m.chat, { image: { url: result }, caption: 'Media Url : '+result }, { quoted: m })
             }
             break
             case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
@@ -1563,7 +1398,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: result.image[0] },
-                    caption: `ðŸ Title : ${result.title}\nðŸ Category : ${result.type}\nðŸ Detail : ${result.source}\nðŸ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
+                    caption: `Title : ${result.title}\nCategory : ${result.type}\nDetail : ${result.source}\nMedia Url : ${result.image[2] || result.image[1] || result.image[0]}`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1581,7 +1416,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: result.image },
-                    caption: `ðŸ Title : ${result.title}\nðŸ Source : ${result.source}\nðŸ Media Url : ${result.image}`,
+                    caption: `Title : ${result.title}\nSource : ${result.source}\nMedia Url : ${result.image}`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1641,14 +1476,14 @@ break
                 if (!Number(text)) throw `Example : ${prefix + command} 6289695073357`
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nomor HP :* ${anu.message.nomer_hp}\nðŸ *Angka Shuzi :* ${anu.message.angka_shuzi}\nðŸ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\nðŸ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
+                nekell.sendText(m.chat, `*Nomor HP :* ${anu.message.nomer_hp}\n*Angka Shuzi :* ${anu.message.angka_shuzi}\n*Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n*Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) throw `Example : ${prefix + command} belanja`
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Mimpi :* ${anu.message.mimpi}\nðŸ *Arti :* ${anu.message.arti}\nðŸ *Solusi :* ${anu.message.solusi}`, m)
+                nekell.sendText(m.chat, `*Mimpi :* ${anu.message.mimpi}\n*Arti :* ${anu.message.arti}\n*Solusi :* ${anu.message.solusi}`, m)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -1656,7 +1491,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama Anda :* ${anu.message.nama_anda.nama}\nðŸ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\nðŸ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\nðŸ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama Anda :* ${anu.message.nama_anda.nama}\n*Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n*Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n*Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -1664,7 +1499,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama Anda :* ${anu.message.nama_anda.nama}\nðŸ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\nðŸ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\nðŸ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama Anda :* ${anu.message.nama_anda.nama}\n*Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n*Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n*Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'suamiistri': {
@@ -1672,7 +1507,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama Suami :* ${anu.message.suami.nama}\nðŸ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\nðŸ *Nama Istri :* ${anu.message.istri.nama}\nðŸ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama Suami :* ${anu.message.suami.nama}\n*Lahir Suami :* ${anu.message.suami.tgl_lahir}\n*Nama Istri :* ${anu.message.istri.nama}\n*Lahir Istri :* ${anu.message.istri.tgl_lahir}\n*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -1680,14 +1515,14 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama Anda :* ${anu.message.nama_anda.nama}\nðŸ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\nðŸ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\nðŸ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\nðŸ *Sisi Positif :* ${anu.message.sisi_positif}\nðŸ *Sisi Negatif :* ${anu.message.sisi_negatif}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama Anda :* ${anu.message.nama_anda.nama}\n*Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n*Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n*Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n*Sisi Positif :* ${anu.message.sisi_positif}\n*Sisi Negatif :* ${anu.message.sisi_negatif}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
                 if (!text) throw `Example : ${prefix + command} Hfdsmslm`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Arti :* ${anu.message.arti}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Arti :* ${anu.message.arti}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -1695,7 +1530,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Life Path :* ${anu.message.life_path}\nðŸ *Destiny :* ${anu.message.destiny}\nðŸ *Destiny Desire :* ${anu.message.destiny_desire}\nðŸ *Personality :* ${anu.message.personality}\nðŸ *Persentase :* ${anu.message.persentase_kecocokan}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Lahir :* ${anu.message.tgl_lahir}\n*Life Path :* ${anu.message.life_path}\n*Destiny :* ${anu.message.destiny}\n*Destiny Desire :* ${anu.message.destiny_desire}\n*Personality :* ${anu.message.personality}\n*Persentase :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -1703,7 +1538,7 @@ break
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendImage(m.chat,  anu.message.gambar, `ðŸ *Nama Anda :* ${anu.message.nama_anda}\nðŸ *Nama Pasangan :* ${anu.message.nama_pasangan}\nðŸ *Sisi Positif :* ${anu.message.sisi_positif}\nðŸ *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
+                nekell.sendImage(m.chat,  anu.message.gambar, `*Nama Anda :* ${anu.message.nama_anda}\n*Nama Pasangan :* ${anu.message.nama_pasangan}\n*Sisi Positif :* ${anu.message.sisi_positif}\n*Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -1711,7 +1546,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Tanggal Pernikahan :* ${anu.message.tanggal}\nðŸ *karakteristik :* ${anu.message.karakteristik}`, m)
+                nekell.sendText(m.chat, `*Tanggal Pernikahan :* ${anu.message.tanggal}\n*karakteristik :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -1719,7 +1554,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Lahir :* ${anu.message.hari_lahir}\nðŸ *Usaha :* ${anu.message.usaha}`, m)
+                nekell.sendText(m.chat, `*Lahir :* ${anu.message.hari_lahir}\n*Usaha :* ${anu.message.usaha}`, m)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -1727,7 +1562,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Lahir :* ${anu.message.hari_lahir}\nðŸ *Rezeki :* ${anu.message.rejeki}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Lahir :* ${anu.message.hari_lahir}\n*Rezeki :* ${anu.message.rejeki}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -1735,7 +1570,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Lahir :* ${anu.message.hari_lahir}\nðŸ *Pekerjaan :* ${anu.message.pekerjaan}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Lahir :* ${anu.message.hari_lahir}\n*Pekerjaan :* ${anu.message.pekerjaan}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -1743,7 +1578,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Analisa :* ${anu.message.analisa}\nðŸ *Angka Akar :* ${anu.message.angka_akar}\nðŸ *Sifat :* ${anu.message.sifat}\nðŸ *Elemen :* ${anu.message.elemen}\nðŸ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
+                nekell.sendText(m.chat, `*Analisa :* ${anu.message.analisa}\n*Angka Akar :* ${anu.message.angka_akar}\n*Sifat :* ${anu.message.sifat}\n*Elemen :* ${anu.message.elemen}\n*Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -1751,7 +1586,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Analisa :* ${anu.message.analisa}\nðŸ *Sektor :* ${anu.message.sektor}\nðŸ *Elemen :* ${anu.message.elemen}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Analisa :* ${anu.message.analisa}\n*Sektor :* ${anu.message.sektor}\n*Elemen :* ${anu.message.elemen}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -1759,7 +1594,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendImage(m.chat, anu.message.image, `ðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Simbol Tarot :* ${anu.message.simbol_tarot}\nðŸ *Arti :* ${anu.message.arti}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendImage(m.chat, anu.message.image, `*Lahir :* ${anu.message.tgl_lahir}\n*Simbol Tarot :* ${anu.message.simbol_tarot}\n*Arti :* ${anu.message.arti}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -1767,7 +1602,7 @@ break
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Lahir :* ${anu.message.tahun_lahir}\nðŸ *Gender :* ${anu.message.jenis_kelamin}\nðŸ *Angka Kua :* ${anu.message.angka_kua}\nðŸ *Kelompok :* ${anu.message.kelompok}\nðŸ *Karakter :* ${anu.message.karakter}\nðŸ *Sektor Baik :* ${anu.message.sektor_baik}\nðŸ *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Lahir :* ${anu.message.tahun_lahir}\n*Gender :* ${anu.message.jenis_kelamin}\n*Angka Kua :* ${anu.message.angka_kua}\n*Kelompok :* ${anu.message.kelompok}\n*Karakter :* ${anu.message.karakter}\n*Sektor Baik :* ${anu.message.sektor_baik}\n*Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
             }
             break
             case 'haribaik': {
@@ -1775,7 +1610,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Kala Tinantang :* ${anu.message.kala_tinantang}\nðŸ *Info :* ${anu.message.info}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Lahir :* ${anu.message.tgl_lahir}\n*Kala Tinantang :* ${anu.message.kala_tinantang}\n*Info :* ${anu.message.info}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -1783,7 +1618,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Info :* ${anu.message.info}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Lahir :* ${anu.message.tgl_lahir}\n*Hasil :* ${anu.message.result}\n*Info :* ${anu.message.info}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -1791,7 +1626,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Hari Lahir :* ${anu.message.hari_lahir}\nðŸ *Tanggal Lahir :* ${anu.message.tgl_lahir}\nðŸ *Hari Naas :* ${anu.message.hari_naas}\nðŸ *Info :* ${anu.message.catatan}\nðŸ *Catatan :* ${anu.message.info}`, m)
+                nekell.sendText(m.chat, `*Hari Lahir :* ${anu.message.hari_lahir}\n*Tanggal Lahir :* ${anu.message.tgl_lahir}\n*Hari Naas :* ${anu.message.hari_naas}\n*Info :* ${anu.message.catatan}\n*Catatan :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -1799,7 +1634,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Hari Lahir :* ${anu.message.hari_lahir}\nðŸ *Tanggal Lahir :* ${anu.message.tgl_lahir}\nðŸ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Hari Lahir :* ${anu.message.hari_lahir}\n*Tanggal Lahir :* ${anu.message.tgl_lahir}\n*Arah Naga Hari :* ${anu.message.arah_naga_hari}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -1807,7 +1642,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Hari Lahir :* ${anu.message.hari_lahir}\nðŸ *tanggal Lahir :* ${anu.message.tgl_lahir}\nðŸ *Arah Rezeki :* ${anu.message.arah_rejeki}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Hari Lahir :* ${anu.message.hari_lahir}\n*tanggal Lahir :* ${anu.message.tgl_lahir}\n*Arah Rezeki :* ${anu.message.arah_rejeki}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
@@ -1815,7 +1650,7 @@ break
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Lahir :* ${anu.message.tgl_lahir}\n*Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -1823,7 +1658,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Tanggal :* ${anu.message.tanggal}\nðŸ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\nðŸ *Watak Hari :* ${anu.message.watak_hari}\nðŸ *Naga Hari :* ${anu.message.naga_hari}\nðŸ *Jam Baik :* ${anu.message.jam_baik}\nðŸ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
+                nekell.sendText(m.chat, `*Tanggal :* ${anu.message.tanggal}\n*Jumlah Neptu :* ${anu.message.jumlah_neptu}\n*Watak Hari :* ${anu.message.watak_hari}\n*Naga Hari :* ${anu.message.naga_hari}\n*Jam Baik :* ${anu.message.jam_baik}\n*Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -1831,7 +1666,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Garis Hidup :* ${anu.message.garis_hidup}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Lahir :* ${anu.message.tgl_lahir}\n*Garis Hidup :* ${anu.message.garis_hidup}`, m)
             }
             break
             case 'keberuntungan': {
@@ -1839,7 +1674,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Nama :* ${anu.message.nama}\nðŸ *Lahir :* ${anu.message.tgl_lahir}\nðŸ *Hasil :* ${anu.message.result}`, m)
+                nekell.sendText(m.chat, `*Nama :* ${anu.message.nama}\n*Lahir :* ${anu.message.tgl_lahir}\n*Hasil :* ${anu.message.result}`, m)
             }
             break
             case 'memancing': {
@@ -1847,7 +1682,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Tanggal :* ${anu.message.tgl_memancing}\nðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Tanggal :* ${anu.message.tgl_memancing}\n*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
@@ -1855,7 +1690,7 @@ break
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Hasil :* ${anu.message.result}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Hasil :* ${anu.message.result}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -1890,14 +1725,14 @@ break
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Zodiak :* ${anu.message.zodiak}\nðŸ *Nomor :* ${anu.message.nomor_keberuntungan}\nðŸ *Aroma :* ${anu.message.aroma_keberuntungan}\nðŸ *Planet :* ${anu.message.planet_yang_mengitari}\nðŸ *Bunga :* ${anu.message.bunga_keberuntungan}\nðŸ *Warna :* ${anu.message.warna_keberuntungan}\nðŸ *Batu :* ${anu.message.batu_keberuntungan}\nðŸ *Elemen :* ${anu.message.elemen_keberuntungan}\nðŸ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\nðŸ *Catatan :* ${anu.message.catatan}`, m)
+                nekell.sendText(m.chat, `*Zodiak :* ${anu.message.zodiak}\n*Nomor :* ${anu.message.nomor_keberuntungan}\n*Aroma :* ${anu.message.aroma_keberuntungan}\n*Planet :* ${anu.message.planet_yang_mengitari}\n*Bunga :* ${anu.message.bunga_keberuntungan}\n*Warna :* ${anu.message.warna_keberuntungan}\n*Batu :* ${anu.message.batu_keberuntungan}\n*Elemen :* ${anu.message.elemen_keberuntungan}\n*Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n*Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return m.reply(anu.message)
-                nekell.sendText(m.chat, `ðŸ *Hasil :* ${anu.message}`, m)
+                nekell.sendText(m.chat, `*Hasil :* ${anu.message}`, m)
             }
             break
 	        case 'tiktok': case 'tiktoknowm': {
@@ -1973,7 +1808,7 @@ break
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await nekell.sendImage(m.chat, anu.result.img, `ðŸ Title : ${anu.result.lagu}\nðŸ Album : ${anu.result.album}\nðŸ Singer : ${anu.result.penyanyi}\nðŸ Publish : ${anu.result.publish}\nðŸ Lirik :\n${anu.result.lirik.result}`, m)
+                let msg = await nekell.sendImage(m.chat, anu.result.img, `Title : ${anu.result.lagu}\nAlbum : ${anu.result.album}\nSinger : ${anu.result.penyanyi}\nPublish : ${anu.result.publish}\nLirik :\n${anu.result.lirik.result}`, m)
                 nekell.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
             }
             break
@@ -1981,7 +1816,7 @@ break
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await nekell.sendImage(m.chat, anu.result.thumb, `ðŸ Title : ${anu.result.title}\nðŸ Url : ${isUrl(text)[0]}`)
+                let msg = await nekell.sendImage(m.chat, anu.result.thumb, `Title : ${anu.result.title}\nUrl : ${isUrl(text)[0]}`)
                 nekell.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
             }
             break
@@ -2024,7 +1859,7 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                nekell.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `ðŸ Title : ${anu.result.title}`}, { quoted: m })
+                nekell.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
@@ -2040,17 +1875,17 @@ break
 		let anu = await umma(isUrl(text)[0])
 		if (anu.type == 'video') {
 		    let buttons = [
-                        {buttonId: `ytmp3 ${anu.media[0]} 128kbps`, buttonText: {displayText: 'â™« Audio'}, type: 1},
-                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: 'â–º Video'}, type: 1}
+                        {buttonId: `ytmp3 ${anu.media[0]} 128kbps`, buttonText: {displayText: ' Audio'}, type: 1},
+                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: 'Video'}, type: 1}
                     ]
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
 			caption: `
-ðŸ Title : ${anu.title}
-ðŸ Author : ${anu.author.name}
-ðŸ Like : ${anu.like}
-ðŸ Caption : ${anu.caption}
-ðŸ Url : ${anu.media[0]}
+Title : ${anu.title}
+Author : ${anu.author.name}
+Like : ${anu.like}
+Caption : ${anu.caption}
+Url : ${anu.media[0]}
 Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan command ytmp3/ytmp4 dengan url diatas
 `,
 			footer: nekell.user.name,
@@ -2060,7 +1895,7 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 		    nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        nekell.sendMessage(m.chat, { image: { url }, caption: `ðŸ Title : ${anu.title}\nðŸ Author : ${anu.author.name}\nðŸ Like : ${anu.like}\nðŸ Caption : ${anu.caption}` }, { quoted: m })
+		        nekell.sendMessage(m.chat, { image: { url }, caption: `Title : ${anu.title}\nAuthor : ${anu.author.name}\nLike : ${anu.like}\nCaption : ${anu.caption}` }, { quoted: m })
 		    })
 		}
 	    }
@@ -2153,7 +1988,7 @@ ${id}`)
 		if (!args[0]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah tafsir surah Al-Fatihah ayat 2`
 		if (!args[1]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah tafsir surah Al-Fatihah ayat 2`
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
-		let txt = `ã€Œ *Tafsir Surah*  ã€
+		let txt = ` *Tafsir Surah*
 
 *Pendek* : ${res.result.data.tafsir.id.short}
 
@@ -2260,9 +2095,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'listmsg': {
                 let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
 	        let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
-		let teks = 'ã€Œ LIST DATABASE ã€\n\n'
+		let teks = 'LIST DATABASE\n\n'
 		for (let i of seplit) {
-		    teks += `â¬¡ *Name :* ${i.nama}\nâ¬¡ *Type :* ${getContentType(i.message).replace(/Message/i, '')}\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n`
+		    teks += `*Name :* ${i.nama}\nâ¬¡ *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n\n\n`
 	        }
 	        m.reply(teks)
 	    }
@@ -2431,7 +2266,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 respon = `
 Kecepatan Respon ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
-ðŸ’» Info Server
+Info Server
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
@@ -2450,311 +2285,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'list': case 'help': case '?': case 'menu': {
-                anu = `â”Œâ”€â”€â­“ *ã€Œ Koleksibot V3 ã€*
- Hai ${pushname} ðŸ—¿ Saya ${botname} Ada Yang Bisa Saya Bantu?.
+                anu = `Koleksibot V4
+ Hai ${pushname} Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
  Creator : ${ownername}
  Prefix  : ${prefix}
 Quotes  : ${quotes}
 
-â”Œâ”€â”€â­“ *Group Menu*
-â”‚
-â”‚ðŸ ${prefix}linkgroup
-â”‚ðŸ ${prefix}ephemeral [option]
-â”‚ðŸ ${prefix}setppgc [image]
-â”‚ðŸ ${prefix}setname [text]
-â”‚ðŸ ${prefix}setdesc [text]
-â”‚ðŸ ${prefix}group [option]
-â”‚ðŸ ${prefix}editinfo [option]
-â”‚ðŸ ${prefix}add @user
-â”‚ðŸ ${prefix}kick @user
-â”‚ðŸ ${prefix}hidetag [text]
-â”‚ðŸ ${prefix}tagall [text]
-â”‚ðŸ ${prefix}promote @user
-â”‚ðŸ ${prefix}demote @user
-â”‚ðŸ ${prefix}vote [text]
-â”‚ðŸ ${prefix}devote
-â”‚ðŸ ${prefix}upvote
-â”‚ðŸ ${prefix}cekvote
-â”‚ðŸ ${prefix}hapusvote
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
+PAKAI DOANG DONASI KAGAK WKWKWKWKWKWK
 
-â”Œâ”€â”€â­“ *Downloader Menu*
-â”‚
-â”‚ðŸ ${prefix}tiktoknowm [url]
-â”‚ðŸ ${prefix}tiktokwm [url]
-â”‚ðŸ ${prefix}tiktokmp3 [url]
-â”‚ðŸ ${prefix}instagram [url]
-â”‚ðŸ ${prefix}twitter [url]
-â”‚ðŸ ${prefix}twittermp3 [url]
-â”‚ðŸ ${prefix}facebook [url]
-â”‚ðŸ ${prefix}pinterestdl [url]
-â”‚ðŸ ${prefix}ytmp3 [url]
-â”‚ðŸ ${prefix}ytmp4 [url]
-â”‚ðŸ ${prefix}getmusic [query]
-â”‚ðŸ ${prefix}getvideo [query]
-â”‚ðŸ ${prefix}umma [url]
-â”‚ðŸ ${prefix}joox [query]
-â”‚ðŸ ${prefix}soundcloud [url]
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Search Menu*
-â”‚
-â”‚ðŸ ${prefix}play [query]
-â”‚ðŸ ${prefix}yts [query]
-â”‚ðŸ ${prefix}google [query]
-â”‚ðŸ ${prefix}gimage [query]
-â”‚ðŸ ${prefix}pinterest [query]
-â”‚ðŸ ${prefix}wallpaper [query]
-â”‚ðŸ ${prefix}wikimedia [query]
-â”‚ðŸ ${prefix}ytsearch [query]
-â”‚ðŸ ${prefix}ringtone [query]
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Random Menu*
-â”‚
-â”‚ðŸ ${prefix}coffe
-â”‚ðŸ ${prefix}quotesanime
-â”‚ðŸ ${prefix}motivasi
-â”‚ðŸ ${prefix}dilanquote
-â”‚ðŸ ${prefix}bucinquote
-â”‚ðŸ ${prefix}katasenja
-â”‚ðŸ ${prefix}puisi
-â”‚ðŸ ${prefix}couple
-â”‚ðŸ ${prefix}anime
-â”‚ðŸ ${prefix}waifu
-â”‚ðŸ ${prefix}husbu
-â”‚ðŸ ${prefix}neko
-â”‚ðŸ ${prefix}shinobu
-â”‚ðŸ ${prefix}megumin
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Text Pro Menu*
-â”‚
-â”‚ðŸ ${prefix}3dchristmas
-â”‚ðŸ ${prefix}3ddeepsea
-â”‚ðŸ ${prefix}americanflag
-â”‚ðŸ ${prefix}3dscifi
-â”‚ðŸ ${prefix}3drainbow
-â”‚ðŸ ${prefix}3dwaterpipe
-â”‚ðŸ ${prefix}halloweenskeleton
-â”‚ðŸ ${prefix}sketch
-â”‚ðŸ ${prefix}bluecircuit
-â”‚ðŸ ${prefix}space
-â”‚ðŸ ${prefix}metallic
-â”‚ðŸ ${prefix}fiction
-â”‚ðŸ ${prefix}greenhorror
-â”‚ðŸ ${prefix}transformer
-â”‚ðŸ ${prefix}berry
-â”‚ðŸ ${prefix}thunder
-â”‚ðŸ ${prefix}magma
-â”‚ðŸ ${prefix}3dcrackedstone
-â”‚ðŸ ${prefix}3dneonlight
-â”‚ðŸ ${prefix}impressiveglitch
-â”‚ðŸ ${prefix}naturalleaves
-â”‚ðŸ ${prefix}fireworksparkle
-â”‚ðŸ ${prefix}matrix
-â”‚ðŸ ${prefix}dropwater
-â”‚ðŸ ${prefix}harrypotter
-â”‚ðŸ ${prefix}foggywindow
-â”‚ðŸ ${prefix}neondevils
-â”‚ðŸ ${prefix}christmasholiday
-â”‚ðŸ ${prefix}3dgradient
-â”‚ðŸ ${prefix}blackpink
-â”‚ðŸ ${prefix}gluetext
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Photo Oxy Menu*
-â”‚
-â”‚ðŸ ${prefix}shadow
-â”‚ðŸ ${prefix}romantic
-â”‚ðŸ ${prefix}smoke
-â”‚ðŸ ${prefix}burnpapper
-â”‚ðŸ ${prefix}naruto
-â”‚ðŸ ${prefix}lovemsg
-â”‚ðŸ ${prefix}grassmsg
-â”‚ðŸ ${prefix}lovetext
-â”‚ðŸ ${prefix}coffecup
-â”‚ðŸ ${prefix}butterfly
-â”‚ðŸ ${prefix}harrypotter
-â”‚ðŸ ${prefix}retrolol
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Ephoto Menu*
-â”‚
-â”‚ðŸ ${prefix}ffcover
-â”‚ðŸ ${prefix}crossfire
-â”‚ðŸ ${prefix}galaxy
-â”‚ðŸ ${prefix}glass
-â”‚ðŸ ${prefix}neon
-â”‚ðŸ ${prefix}beach
-â”‚ðŸ ${prefix}blackpink
-â”‚ðŸ ${prefix}igcertificate
-â”‚ðŸ ${prefix}ytcertificate
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Fun Menu*
-â”‚
-â”‚ðŸ ${prefix}halah
-â”‚ðŸ ${prefix}hilih
-â”‚ðŸ ${prefix}huluh
-â”‚ðŸ ${prefix}heleh
-â”‚ðŸ ${prefix}holoh
-â”‚ðŸ ${prefix}jadian
-â”‚ðŸ ${prefix}jodohku
-â”‚ðŸ ${prefix}delttt
-â”‚ðŸ ${prefix}tictactoe
-â”‚ðŸ ${prefix}family100
-â”‚ðŸ ${prefix}tebak [option]
-â”‚ðŸ ${prefix}math [mode]
-â”‚ðŸ ${prefix}suitpvp [@tag]
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Primbon Menu*
-â”‚
-â”‚ðŸ ${prefix}nomorhoki
-â”‚ðŸ ${prefix}artimimpi
-â”‚ðŸ ${prefix}artinama
-â”‚ðŸ ${prefix}ramaljodoh
-â”‚ðŸ ${prefix}ramaljodohbali
-â”‚ðŸ ${prefix}suamiistri
-â”‚ðŸ ${prefix}ramalcinta
-â”‚ðŸ ${prefix}cocoknama
-â”‚ðŸ ${prefix}pasangan
-â”‚ðŸ ${prefix}jadiannikah
-â”‚ðŸ ${prefix}sifatusaha
-â”‚ðŸ ${prefix}rezeki
-â”‚ðŸ ${prefix}pekerjaan
-â”‚ðŸ ${prefix}nasib
-â”‚ðŸ ${prefix}penyakit
-â”‚ðŸ ${prefix}tarot
-â”‚ðŸ ${prefix}fengshui
-â”‚ðŸ ${prefix}haribaik
-â”‚ðŸ ${prefix}harisangar
-â”‚ðŸ ${prefix}harisial
-â”‚ðŸ ${prefix}nagahari
-â”‚ðŸ ${prefix}arahrezeki
-â”‚ðŸ ${prefix}peruntungan
-â”‚ðŸ ${prefix}weton
-â”‚ðŸ ${prefix}karakter
-â”‚ðŸ ${prefix}keberuntungan
-â”‚ðŸ ${prefix}memancing
-â”‚ðŸ ${prefix}masasubur
-â”‚ðŸ ${prefix}zodiak
-â”‚ðŸ ${prefix}shio
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Convert Menu*
-â”‚
-â”‚ðŸ ${prefix}toimage
-â”‚ðŸ ${prefix}removebg
-â”‚ðŸ ${prefix}smeme
-â”‚ðŸ ${prefix}memegen
-â”‚ðŸ ${prefix}sticker
-â”‚ðŸ ${prefix}emojimix
-â”‚ðŸ ${prefix}tovideo
-â”‚ðŸ ${prefix}togif
-â”‚ðŸ ${prefix}tourl
-â”‚ðŸ ${prefix}tovn
-â”‚ðŸ ${prefix}tomp3
-â”‚ðŸ ${prefix}toaudio
-â”‚ðŸ ${prefix}ebinary
-â”‚ðŸ ${prefix}dbinary
-â”‚ðŸ ${prefix}styletext
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Main Menu*
-â”‚
-â”‚ðŸ ${prefix}ping
-â”‚ðŸ ${prefix}owner
-â”‚ðŸ ${prefix}menu / ${prefix}help / ${prefix}?
-â”‚ðŸ ${prefix}delete
-â”‚ðŸ ${prefix}infochat
-â”‚ðŸ ${prefix}quoted
-â”‚ðŸ ${prefix}listpc
-â”‚ðŸ ${prefix}listgc
-â”‚ðŸ ${prefix}listonline
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Database Menu*
-â”‚
-â”‚ðŸ ${prefix}setcmd
-â”‚ðŸ ${prefix}listcmd
-â”‚ðŸ ${prefix}delcmd
-â”‚ðŸ ${prefix}lockcmd
-â”‚ðŸ ${prefix}addmsg
-â”‚ðŸ ${prefix}listmsg
-â”‚ðŸ ${prefix}getmsg
-â”‚ðŸ ${prefix}delmsg
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Anonymous Menu*
-â”‚
-â”‚ðŸ ${prefix}anonymous
-â”‚ðŸ ${prefix}start
-â”‚ðŸ ${prefix}next
-â”‚ðŸ ${prefix}keluar
-â”‚ðŸ ${prefix}sendkontak
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Islamic Menu*
-â”‚
-â”‚ðŸ ${prefix}iqra
-â”‚ðŸ ${prefix}hadist
-â”‚ðŸ ${prefix}alquran
-â”‚ðŸ ${prefix}juzamma
-â”‚ðŸ ${prefix}tafsirsurah
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Voice Changer*
-â”‚
-â”‚ðŸ ${prefix}bass
-â”‚ðŸ ${prefix}blown
-â”‚ðŸ ${prefix}deep
-â”‚ðŸ ${prefix}earrape
-â”‚ðŸ ${prefix}fast
-â”‚ðŸ ${prefix}fat
-â”‚ðŸ ${prefix}nightcore
-â”‚ðŸ ${prefix}reverse
-â”‚ðŸ ${prefix}robot
-â”‚ðŸ ${prefix}slow
-â”‚ðŸ ${prefix}tupai
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Owner Menu*
-â”‚
-â”‚ðŸ ${prefix}chat [option]
-â”‚ðŸ ${prefix}join [link]
-â”‚ðŸ ${prefix}leave
-â”‚ðŸ ${prefix}block @user
-â”‚ðŸ ${prefix}unblock @user
-â”‚ðŸ ${prefix}bcgroup [text]
-â”‚ðŸ ${prefix}bcall [text]
-â”‚ðŸ ${prefix}setppbot [image]
-â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â­“
-
-â”Œâ”€â”€â­“ *Thanks To*
-â”‚
-â”‚ðŸ“Œ My God
-â”‚ðŸ“Œ Saya : ${aku}
-â”‚ðŸ“Œ ${allfriend}
-â””â”€â”€â”€â”€â”€â”€â”€â­“
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/nekell.jpg') }, { upload: nekell.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
