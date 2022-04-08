@@ -12,7 +12,7 @@ global.APIs = {
   amel: 'https://melcanz.com',
   xteam: 'https://api.xteam.xyz',
   indonesiaapi: 'https://indonesiapi.herokuapp.com',
-  zeks: 'https://myselfff.herokuapp.com',
+  alc: 'https://api-alc.herokuapp.com',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   neoxr: 'https://neoxr-api.herokuapp.com',
@@ -26,7 +26,7 @@ global.APIKeys = {
   'https://api.xteam.xyz': 'db0e06bd9f096399',
   'https://api.lolhuman.xyz': 'eafcf901640d1c599ae71519',
   'https://indonesiaapi.herokuapp.com': 'kRdw3uhI',
-  'https://myselfff.herokuapp.com': '/docs',
+  'https://api-alc.herokuapp.com': 'ConfuMods',
   'https://pencarikode.xyz': 'pais',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
