@@ -2461,7 +2461,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'list': case 'help': case '?': case 'menu': {
-                anu = `┌──🤖 *「 K O L E K S I B O T V4 」*
+                anu = `┌──🤖 *「 K O L E K S I B O T V5 」*
 *─────❑ 「 RULES BOT 」 ❑─────*
 ☞ *Dilarang Spam* ❌
 ☞ *Beri Jeda 3 Detik* 💤
@@ -2469,21 +2469,28 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ☞ *Dilarang Buat Mainan* ⛔
 ☞ *Dilarang Download Di Atas 45mb Nanti Wa Aing Lag Anjg* 🗿
 
+*─────❑ 「 RULES BOT 」 ❑─────*
 ☞ *No Spam*
 ☞ *Give a 3 Second Pause*
 ☞ *Forbidden to Make Strange Stickers*
 ☞ *Toys are not allowed*
 ☞ *Forbidden to download above 45mb later I'm slow*
 
- Hai Orang ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
+ Hai 🍁 Orang ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
+╭══〘 ✯✯✯✯✯✯✯✯ 〙═╮
+│🤖 ${quotes}
+
+╰══╡✯✯✯✯✯✯✯✯╞══╯
+
+╭══〘 ✯✯✯✯✯✯✯✯ 〙═╮
 │🤖 Namamu : ${pushname}
 │🤖 Creator : ${ownername}
 │🤖 Prefix  : ${prefix}
 │🤖 Owner   : ${ownernumber}
-│🤖 Quotes  : ${quotes}
+╰══╡✯✯✯✯✯✯✯✯╞══╯
 
-┌─────❑ *Group Menu*
+┌───❑ *Group Menu* 👥
 │
 │ ${prefix}linkgroup
 │ ${prefix}ephemeral [option]
@@ -2506,7 +2513,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌─────❑ *Downloader Menu*
+┌─────❑ *Downloader Menu* 💾
 │
 │ ${prefix}tiktoknowm [url]
 │ ${prefix}tiktokwm [url]
@@ -2526,7 +2533,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Search Menu*
+┌────❑ *Search Menu* 🔎
 │
 │ ${prefix}play [query]
 │ ${prefix}yts [query]
@@ -2540,10 +2547,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Random Menu*
+┌────❑ *Random Menu* ✨
 │
 │ ${prefix}coffe
 │ ${prefix}quotesanime
+│ ${prefix}hentai2
+│ ${prefix}kawai
 │ ${prefix}motivasi
 │ ${prefix}dilanquote
 │ ${prefix}bucinquote
@@ -2552,9 +2561,9 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │ ${prefix}couple
 │ ${prefix}anime
 │
-└───────🤖
+└────
 
-┌────❑ *Text Pro Menu*
+┌────❑ *Text Pro Menu* ✏
 │
 │ ${prefix}3dchristmas
 │ ${prefix}3ddeepsea
@@ -2588,9 +2597,9 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │ ${prefix}blackpink
 │ ${prefix}gluetext
 │
-└───────⭓
+└───────
 
-┌────❑ *Photo Oxy Menu*
+┌────❑ *Photo Oxy Menu* 📷
 │
 │ ${prefix}shadow
 │ ${prefix}romantic
@@ -2607,7 +2616,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Ephoto Menu*
+┌────❑ *Ephoto Menu* 🎥
 │
 │ ${prefix}ffcover
 │ ${prefix}crossfire
@@ -2621,7 +2630,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Fun Menu*
+┌────❑ *Fun Menu* 😂
 │
 │ ${prefix}halah
 │ ${prefix}hilih
@@ -2639,7 +2648,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Convert Menu*
+┌────❑ *Convert Menu* 👻
 │
 │ ${prefix}toimage
 │ ${prefix}removebg
@@ -2659,7 +2668,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────⭓
 
-┌────❑ *Main Menu*
+┌────❑ *Main Menu* 😎
 │
 │ ${prefix}ping
 │ ${prefix}owner
@@ -2672,7 +2681,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └──────
 
-┌────❑ *Database Menu*
+┌────❑ *Database Menu* 👍
 │
 │ ${prefix}setcmd
 │ ${prefix}listcmd
@@ -2681,7 +2690,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │ ${prefix}addmsg
 └───────
 
-┌────❑ *Anonymous Menu*
+┌────❑ *Anonymous Menu* 🏆
 │
 │ ${prefix}anonymous
 │ ${prefix}start
@@ -2691,7 +2700,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Islamic Menu*
+┌────❑ *Islamic Menu* 🏠
 │
 │ ${prefix}iqra
 │ ${prefix}hadist
@@ -2701,7 +2710,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌────❑ *Owner Menu*
+┌────❑ *Owner Menu* 😒
 │
 │ ${prefix}chat [option]
 │ ${prefix}join [link]
@@ -2747,8 +2756,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'J O D O H M U',
-                                    "id": 'jodohku'
+                                    "displayText": 'K A W A I',
+                                    "id": 'kawai'
                                 }
                             }]
                         }
