@@ -2454,6 +2454,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ☞ *Dilarang Buat Sticker Aneh Aneh* 🚷
 ☞ *Dilarang Buat Mainan* ⛔
 ☞ *Dilarang Download Di Atas 45mb Nanti Wa Aing Lag Anjg* 🗿
+
+☞ *No Spam*
+☞ *Give a 3 Second Pause*
+☞ *Forbidden to Make Strange Stickers*
+☞ *Toys are not allowed*
+☞ *Forbidden to download above 45mb later I'm slow*
+
  Hai Orang ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
 │🤖 Namamu : ${pushname}
@@ -2462,7 +2469,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │🤖 Owner   : ${ownernumber}
 │🤖 Quotes  : ${quotes}
 
-┌──🤖 *Group Menu*
+┌─────❑ *Group Menu*
 │
 │ ${prefix}linkgroup
 │ ${prefix}ephemeral [option]
@@ -2485,7 +2492,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌──🤖 *Downloader Menu*
+┌─────❑ *Downloader Menu*
 │
 │ ${prefix}tiktoknowm [url]
 │ ${prefix}tiktokwm [url]
@@ -2505,7 +2512,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌──🤖 *Search Menu*
+┌────❑ *Search Menu*
 │
 │ ${prefix}play [query]
 │ ${prefix}yts [query]
@@ -2519,7 +2526,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌── *Random Menu*
+┌────❑ *Random Menu*
 │
 │ ${prefix}coffe
 │ ${prefix}quotesanime
@@ -2533,7 +2540,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────🤖
 
-┌──🤖 *Text Pro Menu*
+┌────❑ *Text Pro Menu*
 │
 │ ${prefix}3dchristmas
 │ ${prefix}3ddeepsea
@@ -2569,7 +2576,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────⭓
 
-┌──🤖 *Photo Oxy Menu*
+┌────❑ *Photo Oxy Menu*
 │
 │ ${prefix}shadow
 │ ${prefix}romantic
@@ -2586,7 +2593,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌──🤖 *Ephoto Menu*
+┌────❑ *Ephoto Menu*
 │
 │ ${prefix}ffcover
 │ ${prefix}crossfire
@@ -2600,7 +2607,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌── *Fun Menu*
+┌────❑ *Fun Menu*
 │
 │ ${prefix}halah
 │ ${prefix}hilih
@@ -2618,7 +2625,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌──🤖 *Convert Menu*
+┌────❑ *Convert Menu*
 │
 │ ${prefix}toimage
 │ ${prefix}removebg
@@ -2638,7 +2645,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────⭓
 
-┌──🤖 *Main Menu*
+┌────❑ *Main Menu*
 │
 │ ${prefix}ping
 │ ${prefix}owner
@@ -2651,7 +2658,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └──────
 
-┌──🤖 *Database Menu*
+┌────❑ *Database Menu*
 │
 │ ${prefix}setcmd
 │ ${prefix}listcmd
@@ -2660,17 +2667,17 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │ ${prefix}addmsg
 └───────
 
-┌──⭓ *Anonymous Menu*
+┌────❑ *Anonymous Menu*
 │
-│⭔ ${prefix}anonymous
-│⭔ ${prefix}start
-│⭔ ${prefix}next
-│⭔ ${prefix}keluar
-│⭔ ${prefix}sendkontak
+│ ${prefix}anonymous
+│ ${prefix}start
+│ ${prefix}next
+│ ${prefix}keluar
+│ ${prefix}sendkontak
 │
-└───────⭓
+└───────
 
-┌──🤖 *Islamic Menu*
+┌────❑ *Islamic Menu*
 │
 │ ${prefix}iqra
 │ ${prefix}hadist
@@ -2680,7 +2687,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │
 └───────
 
-┌──🤖 *Owner Menu*
+┌────❑ *Owner Menu*
 │
 │ ${prefix}chat [option]
 │ ${prefix}join [link]
