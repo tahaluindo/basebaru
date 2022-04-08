@@ -430,7 +430,49 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             }
             break
-	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
+	    case 'rules': case 'peraturan': {
+                anu = ` *Hai ${m.pushName}*\n\n Harus di patuhi, Kalau tidak di Banned!\n 1. Dilarang Toxic Ke Bot.\n 2. Dilarang VC/Call Bot.\n 3. Dilarang Spam Fitur Bot.\n 4. Dilarang Culik Bot ke Grup.\n Kalo sudah dipahami Rules nya
+Silahkan lanjut gunakan
+`
+                let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/rules.jpg') }, { upload: nekell.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: anu,
+                            hydratedButtons: [{
+                                "urlButton": {
+                                    "displayText": 'B L O G G E R',
+                                    "url": 'https://www.rootsec.xyz/2022/03/script-bot-whatsapp-terbaru-versi-md-no.html/'
+                                }
+                            }, {
+                                "urlButton": {
+                                    "displayText": 'I N S T A G R A M',
+                                    "url": 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'P I N G',
+                                    "id": 'ping'
+                                }
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'O W N E R',
+                                    "id": 'owner'
+                                }  
+                            }, {
+                                "quickReplyButton": {
+                                    "displayText": 'B A C K',
+                                    "id": 'menu'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                nekell.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
+            break
+	    case 'donasi': case 'sewabot': case 'p': case 'hallo': case 'bang': {
                 anu = ` *Hai ${m.pushName}*\n\n Bot Rental Prices\n 10K Per Group via Dana 1 Month\n 13K via pulsa 1 Month\n\n Premium Price Bot\n 15k per User 1 bulan\n\nPayment can be via Dana/Gopay/Bank/Pulsa\n\nFor more details, you can chat with the owner\nhttps://wa.me/ (Owner)\n\nDonate For Me : \n\n Dana : \n Saweria : https://saweria.co/
 `
                 let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/logokami.jpg') }, { upload: nekell.waUploadToServer })
