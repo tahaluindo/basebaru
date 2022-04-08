@@ -1550,6 +1550,20 @@ break
                 nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+case 'hentai2': case 'hentaibang': {
+            let buttons = [
+                    {buttonId: `kawai`, buttonText: {displayText: 'Hentai Lagi'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api-alc.herokuapp.com/api/nsfw/hentai2?apikey=ConfuMods' },
+                    caption: `Dilarang Spam...`,
+                    footer: nekell.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
             case 'wallpaper': {
                 if (!text) throw 'Masukkan Query Title'
 		let { wallpaper } = require('./lib/scraper')
