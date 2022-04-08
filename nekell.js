@@ -1536,13 +1536,13 @@ break
                 nekell.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: m })
             }
 	    break
-            case 'coffe': case 'waifu': {
+            case 'coffe': case 'kawai': {
             let buttons = [
-                    {buttonId: `coffe`, buttonText: {displayText: 'Waifu Lagi'}, type: 1}
+                    {buttonId: `kawai`, buttonText: {displayText: 'Waifu Lagi'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: 'https://api-alc.herokuapp.com/api/anime/waifu?&apikey=ConfuMods' },
-                    caption: `☕ Random Coffe`,
+                    caption: `🍁 Kawai`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
