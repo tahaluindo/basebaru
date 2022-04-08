@@ -2448,6 +2448,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             break
             case 'list': case 'help': case '?': case 'menu': {
                 anu = `┌──🤖 *「 K O L E K S I B O T V4 」*
+*─────❑ 「 RULES BOT 」 ❑─────*
+☞ *Dilarang Spam* ❌
+☞ *Beri Jeda 3 Detik* 💤
+☞ *Dilarang Buat Sticker Aneh Aneh* 🚷
+☞ *Dilarang Buat Mainan* ⛔
+☞ *Dilarang Download Di Atas 45mb Nanti Wa Aing Lag Anjg* 🗿
  Hai Orang ${pushname} 🗿 Saya ${botname} Ada Yang Bisa Saya Bantu?.
 
 │🤖 Namamu : ${pushname}
