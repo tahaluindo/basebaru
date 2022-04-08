@@ -1083,7 +1083,7 @@ break
             }
             break
             case 'bcgc': case 'bcgroup': {
-                if (!isOwner) throw mess.owner
+                if (!isCreator) throw mess.owner
                 if (!text) throw `Text mana?\n\nExample : ${prefix + command} Jangan Lupa Donasi`
                 let getGroups = await nekell.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
@@ -1125,7 +1125,7 @@ break
             }
             break
             case 'bc': case 'broadcast': case 'bcall': {
-                if (!isOwner) throw mess.owner
+                if (!isCreator) throw mess.owner
                 if (!text) throw `Text mana?\n\nExample : ${prefix + command} bernekellboy ganteng`
                 let anu = await store.chats.all().map(v => v.id)
                 m.reply(`Mengirim Broadcast Ke ${anu.length} Chat\nWaktu Selesai ${anu.length * 1.5} detik`)
@@ -1134,26 +1134,26 @@ break
 		    let btn = [{
                                 "urlButton": {
                                     "displayText": 'W E B S I T E',
-                                    "url": 'https://mynamelink.blogspot.com/'
+                                    "url": 'https://google.com/'
                                 }
                             }, {
                                 "urlButton": {
                                     "displayText": 'O W N E R',
-                                    "phoneNumber": 'https://wa.me/6283804343232'
+                                    "phoneNumber": 'https://wa.me/'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Status Bot',
+                                    "displayText": 'P I N G',
                                     "id": 'ping'
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Owner',
+                                    "displayText": 'O W N E R',
                                     "id": 'owner'
                                 }  
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'Group Bot',
+                                    "displayText": 'GC Bot',
                                     "id": 'gcbot'
                                 }
                             }]
