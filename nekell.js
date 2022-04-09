@@ -1494,16 +1494,16 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-⭔ Title : ${anu.title}
-⭔ Ext : Search
-⭔ ID : ${anu.videoId}
-⭔ Duration : ${anu.timestamp}
-⭔ Viewers : ${anu.views}
-⭔ Upload At : ${anu.ago}
-⭔ Author : ${anu.author.name}
-⭔ Channel : ${anu.author.url}
-⭔ Description : ${anu.description}
-⭔ Url : ${anu.url}`,
+🍁 Title : ${anu.title}
+🍁 Ext : Search
+✏ ID : ${anu.videoId}
+🎥 Duration : ${anu.timestamp}
+👻 Viewers : ${anu.views}
+👍 Upload At : ${anu.ago}
+😎 Author : ${anu.author.name}
+🍁 Channel : ${anu.author.url}
+🏆 Description : ${anu.description}
+🐤 Url : ${anu.url}`,
                     footer: nekell.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1584,6 +1584,20 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: 'https://api-alc.herokuapp.com/api/anime/waifu?&apikey=ConfuMods' },
+                    caption: `🍁 Kawai`,
+                    footer: nekell.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                nekell.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+	    break
+            case 'nekobang': case 'ayang': {
+            let buttons = [
+                    {buttonId: `nekobang`, buttonText: {displayText: 'Neko Lagi'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api-alc.herokuapp.com/api/anime/neko?&apikey=ConfuMods' },
                     caption: `🍁 Kawai`,
                     footer: nekell.user.name,
                     buttons: buttons,
