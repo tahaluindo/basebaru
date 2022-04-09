@@ -1208,20 +1208,20 @@ break
             }
 break
 case 'welcome':
-					if (!m.isGroup) return reply(mess.only.group)
-					if (!m.isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Hmmmm')
+					if (!m.isGroup) return m.reply(mess.only.group)
+					if (!m.isGroupAdmins) return m.reply(mess.only.admin)
+					if (args.length < 1) return m.reply('Hmmmm')
 					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('Hallo Gaes')
+						if (!m.isWelkom) return m.reply('Hallo Gaes')
 						welkom.push(from)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('Ativou com sucesso o recurso de boas-vindas neste grupo ✔️')
+						m.reply('Sukses ✔️')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('Desativou com sucesso o recurso de boas-vindas neste grupo ✔️')
+						m.reply('Desativou com sucesso o recurso de boas-vindas neste grupo ✔️')
 					} else {
-						reply('1 para ativar, 0 para desativar')
+						m.reply('1 para ativar, 0 para desativar')
 					}
                                       break
             case 'infochat': {
