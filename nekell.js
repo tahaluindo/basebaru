@@ -1146,8 +1146,8 @@ break
                                 }
                             }, {
                                 "quickReplyButton": {
-                                    "displayText": 'S P E E D B O T',
-                                    "id": 'ping'
+                                    "displayText": 'M E N U',
+                                    "id": 'menu'
                                 }
                             }, {
                                 "quickReplyButton": {
@@ -1208,7 +1208,7 @@ break
             }
 break
 case 'welcome':
-					if (!isGroup) return reply(mess.only.group)
+					if (!m.isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Hmmmm')
 					if (Number(args[0]) === 1) {
