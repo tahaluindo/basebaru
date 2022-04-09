@@ -19,6 +19,7 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const {bytesToSize,  UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
