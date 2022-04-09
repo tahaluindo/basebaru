@@ -1205,7 +1205,24 @@ break
 		}
 		m.reply('Sukses Broadcast')
             }
-            break
+break
+case 'welcome':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply('Hmmmm')
+					if (Number(args[0]) === 1) {
+						if (isWelkom) return reply('Hallo Gaes')
+						welkom.push(from)
+						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+						reply('Ativou com sucesso o recurso de boas-vindas neste grupo ✔️')
+					} else if (Number(args[0]) === 0) {
+						welkom.splice(from, 1)
+						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+						reply('Desativou com sucesso o recurso de boas-vindas neste grupo ✔️')
+					} else {
+						reply('1 para ativar, 0 para desativar')
+					}
+                                      break
             case 'infochat': {
                 if (!m.quoted) m.reply('Reply Pesan')
                 let msg = await m.getQuotedObj()
