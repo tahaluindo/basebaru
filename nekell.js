@@ -1209,7 +1209,7 @@ break
 break
 case 'welcome':
 					if (!m.isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!m.isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Hmmmm')
 					if (Number(args[0]) === 1) {
 						if (isWelkom) return reply('Hallo Gaes')
