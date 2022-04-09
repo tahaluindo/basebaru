@@ -97,7 +97,7 @@ ppu = await TelegraPh(ff)
 await fs.unlinkSync(ff)
 hmm2 = await getBuffer(ppgroup)*/
 try {
-welcome = await getBuffer(`https://api.popcat.xyz/welcomecard?background=https://tinyurl.com/ybg6koy8&text1=${encodeURI(await nekell.getName(num))}&text2=Welcome+To+${encodeURI(metadata.subject)}&text3=Member+${encodeURI(metadata.participants.length)}&avatar=${ppu}`)
+welcome = await getBuffer(`https://api.popcat.xyz/welcomecard?background=https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png&text1=${encodeURI(await nekell.getName(num))}&text2=Welcome+To+${encodeURI(metadata.subject)}&text3=Member+${encodeURI(metadata.participants.length)}&avatar=${ppu}`)
 } catch {
 welcome = await getBuffer(ppuser)
 }
